@@ -665,12 +665,6 @@ BO_ 2147545089 VDMA_F001_Electronic_Brake_Contr: 8 Vector__XXX
 BO_ 2147545090 VDMA_F002_Electronic_Transmissio: 8 Vector__XXX
  SG_ Electronic_Transmission_Controll : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
-BO_ 2147545091 VDMA_F003_Electronic_Engine_Cont: 8 Vector__XXX
- SG_ Electronic_Engine_Controller_2_R : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
-BO_ 2147545092 VDMA_F004_Electronic_Engine_Cont: 8 Vector__XXX
- SG_ Electronic_Engine_Controller_1_R : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
 BO_ 2147545093 VDMA_F005_Electronic_Transmissio: 8 Vector__XXX
  SG_ Electronic_Transmission_Controll : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
@@ -5714,9 +5708,6 @@ BO_ 2147548336 VDMA_FCB0_Engine_Ignition_Contro: 8 Vector__XXX
 BO_ 2147548337 VDMA_FCB1_Engine_Ignition_Contro: 8 Vector__XXX
  SG_ Engine_Ignition_Control_Module_S : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
-BO_ 2147548338 VDMA_FCB2_Switched_Power_Output_: 8 Vector__XXX
- SG_ Switched_Power_Output_Current_Ra : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
 BO_ 2147548339 VDMA_FCB3_Fused_Power_Output_Cur: 8 Vector__XXX
  SG_ Fused_Power_Output_Current_RawPa : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
@@ -5971,9 +5962,6 @@ BO_ 2147548423 VDMA_FD07_Direct_Lamp_Control_Co: 8 Vector__XXX
 
 BO_ 2147548424 VDMA_FD08_Engine_oil_message: 8 Vector__XXX
  SG_ Engine_oil_message_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
-BO_ 2147548425 VDMA_FD09_High_Resolution_Fuel_C: 8 Vector__XXX
- SG_ High_Resolution_Fuel_Consumption : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
 BO_ 2147548426 VDMA_FD0A_Aftertreatment_2_Outle: 8 Vector__XXX
  SG_ Aftertreatment_2_Outlet_Gas_NOx_ : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
@@ -6310,9 +6298,6 @@ BO_ 2147548538 VDMA_FD7A_Aftertreatment_2_Servi: 8 Vector__XXX
 
 BO_ 2147548539 VDMA_FD7B_Aftertreatment_1_Servi: 8 Vector__XXX
  SG_ Aftertreatment_1_Service_1_RawPa : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
-BO_ 2147548540 VDMA_FD7C_Diesel_Particulate_Fil: 8 Vector__XXX
- SG_ Diesel_Particulate_Filter_Contro : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
 BO_ 2147548541 VDMA_FD7D_Reserved_for_FMS_Tellt: 8 Vector__XXX
  SG_ Reserved_for_FMS_Telltale_status : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
@@ -7013,9 +6998,6 @@ BO_ 2147548778 VDMA_FE6A_Engine_Fuel_Lube_Syste: 8 Vector__XXX
 BO_ 2147548779 VDMA_FE6B_Driver_s_Identificatio: 8 Vector__XXX
  SG_ Driver_s_Identification_RawPaylo : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
-BO_ 2147548780 VDMA_FE6C_Tachograph: 8 Vector__XXX
- SG_ Tachograph_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
 BO_ 2147548781 VDMA_FE6D_Heater_Information: 8 Vector__XXX
  SG_ Heater_Information_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
@@ -7337,9 +7319,6 @@ BO_ 2147548893 VDMA_FEDD_Turbocharger: 8 Vector__XXX
 BO_ 2147548894 VDMA_FEDE_Engine_Air_Start_Press: 8 Vector__XXX
  SG_ Engine_Air_Start_Pressure_RawPay : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
-BO_ 2147548895 VDMA_FEDF_Electronic_Engine_Cont: 8 Vector__XXX
- SG_ Electronic_Engine_Controller_3_R : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
 BO_ 2147548896 VDMA_FEE0_Vehicle_Distance: 8 Vector__XXX
  SG_ Vehicle_Distance_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
@@ -7349,14 +7328,8 @@ BO_ 2147548897 VDMA_FEE1_Retarder_Configuration: 8 Vector__XXX
 BO_ 2147548898 VDMA_FEE2_Transmission_Configura: 8 Vector__XXX
  SG_ Transmission_Configuration_RawPa : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
-BO_ 2147548899 VDMA_FEE3_Engine_Configuration_1: 8 Vector__XXX
- SG_ Engine_Configuration_1_RawPayloa : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
 BO_ 2147548900 VDMA_FEE4_Shutdown: 8 Vector__XXX
  SG_ Shutdown_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
-BO_ 2147548901 VDMA_FEE5_Engine_Hours_Revolutio: 8 Vector__XXX
- SG_ Engine_Hours_Revolutions_RawPayl : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
 BO_ 2147548903 VDMA_FEE7_Vehicle_Hours: 8 Vector__XXX
  SG_ Vehicle_Hours_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
@@ -7370,26 +7343,11 @@ BO_ 2147548905 VDMA_FEE9_Fuel_Consumption_Liqui: 8 Vector__XXX
 BO_ 2147548906 VDMA_FEEA_Vehicle_Weight: 8 Vector__XXX
  SG_ Vehicle_Weight_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
-BO_ 2147548908 VDMA_FEEC_Vehicle_Identification: 8 Vector__XXX
- SG_ Vehicle_Identification_RawPayloa : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
 BO_ 2147548909 VDMA_FEED_Cruise_Control_Vehicle: 8 Vector__XXX
  SG_ Cruise_Control_Vehicle_Speed_Set : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
-BO_ 2147548910 VDMA_FEEE_Engine_Temperature_1: 8 Vector__XXX
- SG_ Engine_Temperature_1_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
-BO_ 2147548911 VDMA_FEEF_Engine_Fluid_Level_Pre: 8 Vector__XXX
- SG_ Engine_Fluid_Level_Pressure_1_Ra : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
 BO_ 2147548912 VDMA_FEF0_Power_Takeoff_Informat: 8 Vector__XXX
  SG_ Power_Takeoff_Information_1_RawP : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
-BO_ 2147548913 VDMA_FEF1_Cruise_Control_Vehicle: 8 Vector__XXX
- SG_ Cruise_Control_Vehicle_Speed_1_R : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
-BO_ 2147548914 VDMA_FEF2_Fuel_Economy_Liquid: 8 Vector__XXX
- SG_ Fuel_Economy_Liquid_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
 BO_ 2147548915 VDMA_FEF3_Vehicle_Position_1: 8 Vector__XXX
  SG_ Vehicle_Position_1_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
@@ -7399,15 +7357,6 @@ BO_ 2147548916 VDMA_FEF4_Tire_Condition_Message: 8 Vector__XXX
 
 BO_ 2147548917 VDMA_FEF5_Ambient_Conditions: 8 Vector__XXX
  SG_ Ambient_Conditions_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
-BO_ 2147548918 VDMA_FEF6_Intake_Exhaust_Conditi: 8 Vector__XXX
- SG_ Intake_Exhaust_Conditions_1_RawP : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
-BO_ 2147548919 VDMA_FEF7_Vehicle_Electrical_Pow: 8 Vector__XXX
- SG_ Vehicle_Electrical_Power_1_RawPa : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
-BO_ 2147548920 VDMA_FEF8_Transmission_Fluids_1: 8 Vector__XXX
- SG_ Transmission_Fluids_1_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
 BO_ 2147548921 VDMA_FEF9_Axle_Information: 8 Vector__XXX
  SG_ Axle_Information_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
@@ -8955,8 +8904,6 @@ CM_ BO_ 2147544320  "Source: isobus.net VDMA Data Dictionary (https://www.isobus
 CM_ BO_ 2147545088  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/2284?type=PGN)";
 CM_ BO_ 2147545089  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/2307?type=PGN)";
 CM_ BO_ 2147545090  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/2318?type=PGN)";
-CM_ BO_ 2147545091  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/2332?type=PGN)";
-CM_ BO_ 2147545092  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/2340?type=PGN)";
 CM_ BO_ 2147545093  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/2345?type=PGN)";
 CM_ BO_ 2147545094  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/2357?type=PGN)";
 CM_ BO_ 2147545095  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/2368?type=PGN)";
@@ -10638,7 +10585,6 @@ CM_ BO_ 2147548334  "Source: isobus.net VDMA Data Dictionary (https://www.isobus
 CM_ BO_ 2147548335  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13232?type=PGN)";
 CM_ BO_ 2147548336  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13234?type=PGN)";
 CM_ BO_ 2147548337  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13238?type=PGN)";
-CM_ BO_ 2147548338  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13270?type=PGN)";
 CM_ BO_ 2147548339  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13302?type=PGN)";
 CM_ BO_ 2147548340  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13334?type=PGN)";
 CM_ BO_ 2147548341  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13366?type=PGN)";
@@ -10724,7 +10670,6 @@ CM_ BO_ 2147548421  "Source: isobus.net VDMA Data Dictionary (https://www.isobus
 CM_ BO_ 2147548422  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13811?type=PGN)";
 CM_ BO_ 2147548423  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13838?type=PGN)";
 CM_ BO_ 2147548424  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13842?type=PGN)";
-CM_ BO_ 2147548425  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13844?type=PGN)";
 CM_ BO_ 2147548426  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13850?type=PGN)";
 CM_ BO_ 2147548427  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13854?type=PGN)";
 CM_ BO_ 2147548428  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/13860?type=PGN)";
@@ -10837,7 +10782,6 @@ CM_ BO_ 2147548536  "Source: isobus.net VDMA Data Dictionary (https://www.isobus
 CM_ BO_ 2147548537  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/14881?type=PGN)";
 CM_ BO_ 2147548538  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/14885?type=PGN)";
 CM_ BO_ 2147548539  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/14889?type=PGN)";
-CM_ BO_ 2147548540  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/14917?type=PGN)";
 CM_ BO_ 2147548541  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/14918?type=PGN)";
 CM_ BO_ 2147548542  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/14922?type=PGN)";
 CM_ BO_ 2147548543  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/14926?type=PGN)";
@@ -11071,7 +11015,6 @@ CM_ BO_ 2147548776  "Source: isobus.net VDMA Data Dictionary (https://www.isobus
 CM_ BO_ 2147548777  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16417?type=PGN)";
 CM_ BO_ 2147548778  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16430?type=PGN)";
 CM_ BO_ 2147548779  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16432?type=PGN)";
-CM_ BO_ 2147548780  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16446?type=PGN)";
 CM_ BO_ 2147548781  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16455?type=PGN)";
 CM_ BO_ 2147548782  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16459?type=PGN)";
 CM_ BO_ 2147548783  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16469?type=PGN)";
@@ -11179,30 +11122,19 @@ CM_ BO_ 2147548891  "Source: isobus.net VDMA Data Dictionary (https://www.isobus
 CM_ BO_ 2147548892  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16994?type=PGN)";
 CM_ BO_ 2147548893  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16998?type=PGN)";
 CM_ BO_ 2147548894  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17001?type=PGN)";
-CM_ BO_ 2147548895  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17010?type=PGN)";
 CM_ BO_ 2147548896  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17012?type=PGN)";
 CM_ BO_ 2147548897  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17026?type=PGN)";
 CM_ BO_ 2147548898  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17029?type=PGN)";
-CM_ BO_ 2147548899  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17058?type=PGN)";
 CM_ BO_ 2147548900  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17081?type=PGN)";
-CM_ BO_ 2147548901  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17083?type=PGN)";
 CM_ BO_ 2147548903  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17093?type=PGN)";
 CM_ BO_ 2147548904  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17097?type=PGN)";
 CM_ BO_ 2147548905  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17099?type=PGN)";
 CM_ BO_ 2147548906  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17103?type=PGN)";
-CM_ BO_ 2147548908  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17108?type=PGN)";
 CM_ BO_ 2147548909  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17118?type=PGN)";
-CM_ BO_ 2147548910  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17124?type=PGN)";
-CM_ BO_ 2147548911  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17131?type=PGN)";
 CM_ BO_ 2147548912  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17145?type=PGN)";
-CM_ BO_ 2147548913  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17165?type=PGN)";
-CM_ BO_ 2147548914  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17170?type=PGN)";
 CM_ BO_ 2147548915  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17172?type=PGN)";
 CM_ BO_ 2147548916  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17181?type=PGN)";
 CM_ BO_ 2147548917  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17186?type=PGN)";
-CM_ BO_ 2147548918  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17193?type=PGN)";
-CM_ BO_ 2147548919  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17198?type=PGN)";
-CM_ BO_ 2147548920  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17206?type=PGN)";
 CM_ BO_ 2147548921  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17212?type=PGN)";
 CM_ BO_ 2147548922  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17219?type=PGN)";
 CM_ BO_ 2147548923  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/17223?type=PGN)";
@@ -11865,8 +11797,6 @@ CM_ SG_ 2147544320 Network_Message_RawPayload "Generic 8-byte raw payload. Detai
 CM_ SG_ 2147545088 Electronic_Retarder_Controller_1 "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/2284?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147545089 Electronic_Brake_Controller_1_Ra "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/2307?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147545090 Electronic_Transmission_Controll "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/2318?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147545091 Electronic_Engine_Controller_2_R "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/2332?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147545092 Electronic_Engine_Controller_1_R "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/2340?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147545093 Electronic_Transmission_Controll "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/2345?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147545094 Electronic_Axle_Controller_1_Raw "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/2357?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147545095 Forward_Lane_Image_1_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/2368?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
@@ -13548,7 +13478,6 @@ CM_ SG_ 2147548334 Engine_Spark_Minimum_Voltage_2_R "Generic 8-byte raw payload.
 CM_ SG_ 2147548335 Engine_Spark_Minimum_Voltage_1_R "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13232?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548336 Engine_Ignition_Controller_Maint "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13234?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548337 Engine_Ignition_Control_Module_S "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13238?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548338 Switched_Power_Output_Current_Ra "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13270?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548339 Fused_Power_Output_Current_RawPa "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13302?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548340 Switched_Power_Output_Status_Raw "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13334?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548341 Fused_Power_Output_Status_RawPay "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13366?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
@@ -13634,7 +13563,6 @@ CM_ SG_ 2147548421 Direct_Lamp_Control_Data_1_RawPa "Generic 8-byte raw payload.
 CM_ SG_ 2147548422 Direct_Lamp_Control_Command_2_Ra "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13811?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548423 Direct_Lamp_Control_Command_1_Ra "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13838?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548424 Engine_oil_message_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13842?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548425 High_Resolution_Fuel_Consumption "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13844?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548426 Aftertreatment_2_Outlet_Gas_NOx_ "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13850?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548427 Aftertreatment_2_Outlet_Gas_NOx_ "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13854?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548428 Aftertreatment_2_Intake_Gas_NOx_ "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/13860?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
@@ -13747,7 +13675,6 @@ CM_ SG_ 2147548536 Aftertreatment_2_Trip_Informatio "Generic 8-byte raw payload.
 CM_ SG_ 2147548537 Aftertreatment_1_Trip_Informatio "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/14881?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548538 Aftertreatment_2_Service_1_RawPa "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/14885?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548539 Aftertreatment_1_Service_1_RawPa "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/14889?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548540 Diesel_Particulate_Filter_Contro "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/14917?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548541 Reserved_for_FMS_Telltale_status "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/14918?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548542 Adaptive_Front_Lighting_System_S "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/14922?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548543 Engine_Configuration_2_RawPayloa "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/14926?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
@@ -13981,7 +13908,6 @@ CM_ SG_ 2147548776 Vehicle_Fluids_RawPayload "Generic 8-byte raw payload. Detail
 CM_ SG_ 2147548777 Engine_Temperature_3_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16417?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548778 Engine_Fuel_Lube_Systems_RawPayl "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16430?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548779 Driver_s_Identification_RawPaylo "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16432?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548780 Tachograph_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16446?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548781 Heater_Information_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16455?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548782 High_Resolution_Wheel_Speed_RawP "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16459?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548783 Adaptive_Cruise_Control_1_RawPay "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16469?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
@@ -14089,30 +14015,19 @@ CM_ SG_ 2147548891 Engine_Fluid_Level_Pressure_2_Ra "Generic 8-byte raw payload.
 CM_ SG_ 2147548892 Idle_Operation_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16994?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548893 Turbocharger_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16998?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548894 Engine_Air_Start_Pressure_RawPay "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17001?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548895 Electronic_Engine_Controller_3_R "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17010?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548896 Vehicle_Distance_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17012?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548897 Retarder_Configuration_RawPayloa "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17026?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548898 Transmission_Configuration_RawPa "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17029?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548899 Engine_Configuration_1_RawPayloa "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17058?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548900 Shutdown_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17081?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548901 Engine_Hours_Revolutions_RawPayl "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17083?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548903 Vehicle_Hours_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17093?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548904 Vehicle_Direction_Speed_RawPaylo "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17097?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548905 Fuel_Consumption_Liquid_1_RawPay "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17099?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548906 Vehicle_Weight_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17103?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548908 Vehicle_Identification_RawPayloa "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17108?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548909 Cruise_Control_Vehicle_Speed_Set "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17118?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548910 Engine_Temperature_1_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17124?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548911 Engine_Fluid_Level_Pressure_1_Ra "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17131?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548912 Power_Takeoff_Information_1_RawP "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17145?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548913 Cruise_Control_Vehicle_Speed_1_R "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17165?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548914 Fuel_Economy_Liquid_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17170?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548915 Vehicle_Position_1_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17172?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548916 Tire_Condition_Message_1_RawPayl "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17181?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548917 Ambient_Conditions_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17186?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548918 Intake_Exhaust_Conditions_1_RawP "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17193?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548919 Vehicle_Electrical_Power_1_RawPa "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17198?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548920 Transmission_Fluids_1_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17206?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548921 Axle_Information_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17212?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548922 Brakes_1_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17219?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548923 Retarder_fluids_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/17223?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
@@ -14740,8 +14655,6 @@ BA_ "SystemMessageLongSymbol" BO_ 2147542272 "VDMA_E500_Running_Gear_Equipment_2
 BA_ "SystemMessageLongSymbol" BO_ 2147545088 "VDMA_F000_Electronic_Retarder_Controller_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147545089 "VDMA_F001_Electronic_Brake_Controller_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147545090 "VDMA_F002_Electronic_Transmission_Controll";
-BA_ "SystemMessageLongSymbol" BO_ 2147545091 "VDMA_F003_Electronic_Engine_Controller_2";
-BA_ "SystemMessageLongSymbol" BO_ 2147545092 "VDMA_F004_Electronic_Engine_Controller_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147545093 "VDMA_F005_Electronic_Transmission_Controll";
 BA_ "SystemMessageLongSymbol" BO_ 2147545094 "VDMA_F006_Electronic_Axle_Controller_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147545096 "VDMA_F008_Hydraulic_Pressure_Governor_Info";
@@ -16292,7 +16205,6 @@ BA_ "SystemMessageLongSymbol" BO_ 2147548334 "VDMA_FCAE_Engine_Spark_Minimum_Vol
 BA_ "SystemMessageLongSymbol" BO_ 2147548335 "VDMA_FCAF_Engine_Spark_Minimum_Voltage_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147548336 "VDMA_FCB0_Engine_Ignition_Controller_Maint";
 BA_ "SystemMessageLongSymbol" BO_ 2147548337 "VDMA_FCB1_Engine_Ignition_Control_Module_S";
-BA_ "SystemMessageLongSymbol" BO_ 2147548338 "VDMA_FCB2_Switched_Power_Output_Current";
 BA_ "SystemMessageLongSymbol" BO_ 2147548339 "VDMA_FCB3_Fused_Power_Output_Current";
 BA_ "SystemMessageLongSymbol" BO_ 2147548340 "VDMA_FCB4_Switched_Power_Output_Status";
 BA_ "SystemMessageLongSymbol" BO_ 2147548341 "VDMA_FCB5_Fused_Power_Output_Status";
@@ -16366,7 +16278,6 @@ BA_ "SystemMessageLongSymbol" BO_ 2147548420 "VDMA_FD04_Direct_Lamp_Control_Data
 BA_ "SystemMessageLongSymbol" BO_ 2147548421 "VDMA_FD05_Direct_Lamp_Control_Data_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147548422 "VDMA_FD06_Direct_Lamp_Control_Command_2";
 BA_ "SystemMessageLongSymbol" BO_ 2147548423 "VDMA_FD07_Direct_Lamp_Control_Command_1";
-BA_ "SystemMessageLongSymbol" BO_ 2147548425 "VDMA_FD09_High_Resolution_Fuel_Consumption";
 BA_ "SystemMessageLongSymbol" BO_ 2147548426 "VDMA_FD0A_Aftertreatment_2_Outlet_Gas_NOx_";
 BA_ "SystemMessageLongSymbol" BO_ 2147548427 "VDMA_FD0B_Aftertreatment_2_Outlet_Gas_NOx_";
 BA_ "SystemMessageLongSymbol" BO_ 2147548428 "VDMA_FD0C_Aftertreatment_2_Intake_Gas_NOx_";
@@ -16463,7 +16374,6 @@ BA_ "SystemMessageLongSymbol" BO_ 2147548536 "VDMA_FD78_Aftertreatment_2_Trip_In
 BA_ "SystemMessageLongSymbol" BO_ 2147548537 "VDMA_FD79_Aftertreatment_1_Trip_Informatio";
 BA_ "SystemMessageLongSymbol" BO_ 2147548538 "VDMA_FD7A_Aftertreatment_2_Service_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147548539 "VDMA_FD7B_Aftertreatment_1_Service_1";
-BA_ "SystemMessageLongSymbol" BO_ 2147548540 "VDMA_FD7C_Diesel_Particulate_Filter_Contro";
 BA_ "SystemMessageLongSymbol" BO_ 2147548541 "VDMA_FD7D_Reserved_for_FMS_Telltale_status";
 BA_ "SystemMessageLongSymbol" BO_ 2147548542 "VDMA_FD7E_Adaptive_Front_Lighting_System_S";
 BA_ "SystemMessageLongSymbol" BO_ 2147548544 "VDMA_FD80_Emission_Related_Permanent_Diagn";
@@ -16737,18 +16647,12 @@ BA_ "SystemMessageLongSymbol" BO_ 2147548886 "VDMA_FED6_Hybrid_or_EV_System_Inpu
 BA_ "SystemMessageLongSymbol" BO_ 2147548889 "VDMA_FED9_Auxiliary_Input_Output_Status_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147548891 "VDMA_FEDB_Engine_Fluid_Level_Pressure_2";
 BA_ "SystemMessageLongSymbol" BO_ 2147548894 "VDMA_FEDE_Engine_Air_Start_Pressure";
-BA_ "SystemMessageLongSymbol" BO_ 2147548895 "VDMA_FEDF_Electronic_Engine_Controller_3";
 BA_ "SystemMessageLongSymbol" BO_ 2147548898 "VDMA_FEE2_Transmission_Configuration";
-BA_ "SystemMessageLongSymbol" BO_ 2147548901 "VDMA_FEE5_Engine_Hours_Revolutions";
 BA_ "SystemMessageLongSymbol" BO_ 2147548904 "VDMA_FEE8_Vehicle_Direction_Speed";
 BA_ "SystemMessageLongSymbol" BO_ 2147548905 "VDMA_FEE9_Fuel_Consumption_Liquid_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147548909 "VDMA_FEED_Cruise_Control_Vehicle_Speed_Set";
-BA_ "SystemMessageLongSymbol" BO_ 2147548911 "VDMA_FEEF_Engine_Fluid_Level_Pressure_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147548912 "VDMA_FEF0_Power_Takeoff_Information_1";
-BA_ "SystemMessageLongSymbol" BO_ 2147548913 "VDMA_FEF1_Cruise_Control_Vehicle_Speed_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147548916 "VDMA_FEF4_Tire_Condition_Message_1";
-BA_ "SystemMessageLongSymbol" BO_ 2147548918 "VDMA_FEF6_Intake_Exhaust_Conditions_1";
-BA_ "SystemMessageLongSymbol" BO_ 2147548919 "VDMA_FEF7_Vehicle_Electrical_Power_1";
 BA_ "SystemMessageLongSymbol" BO_ 2147548926 "VDMA_FEFE_Auxiliary_Water_Pump_Pressure";
 BA_ "SystemMessageLongSymbol" BO_ 2147609856 "VDMA_1ED00_NMEA_Request_Command_Acknowledge";
 BA_ "SystemMessageLongSymbol" BO_ 2147610112 "VDMA_1EE00_PGN_List_Transmit_Receive_PGN_s_";
@@ -17049,8 +16953,6 @@ BA_ "SystemSignalLongSymbol" SG_ 2147542272 Running_Gear_Equipment_2_1_RawPa "Ru
 BA_ "SystemSignalLongSymbol" SG_ 2147545088 Electronic_Retarder_Controller_1 "Electronic_Retarder_Controller_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147545089 Electronic_Brake_Controller_1_Ra "Electronic_Brake_Controller_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147545090 Electronic_Transmission_Controll "Electronic_Transmission_Controll_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147545091 Electronic_Engine_Controller_2_R "Electronic_Engine_Controller_2_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147545092 Electronic_Engine_Controller_1_R "Electronic_Engine_Controller_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147545093 Electronic_Transmission_Controll "Electronic_Transmission_Controll_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147545094 Electronic_Axle_Controller_1_Raw "Electronic_Axle_Controller_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147545096 Hydraulic_Pressure_Governor_Info "Hydraulic_Pressure_Governor_Info_RawPayload";
@@ -18624,7 +18526,6 @@ BA_ "SystemSignalLongSymbol" SG_ 2147548334 Engine_Spark_Minimum_Voltage_2_R "En
 BA_ "SystemSignalLongSymbol" SG_ 2147548335 Engine_Spark_Minimum_Voltage_1_R "Engine_Spark_Minimum_Voltage_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548336 Engine_Ignition_Controller_Maint "Engine_Ignition_Controller_Maint_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548337 Engine_Ignition_Control_Module_S "Engine_Ignition_Control_Module_S_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548338 Switched_Power_Output_Current_Ra "Switched_Power_Output_Current_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548339 Fused_Power_Output_Current_RawPa "Fused_Power_Output_Current_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548340 Switched_Power_Output_Status_Raw "Switched_Power_Output_Status_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548341 Fused_Power_Output_Status_RawPay "Fused_Power_Output_Status_RawPayload";
@@ -18701,7 +18602,6 @@ BA_ "SystemSignalLongSymbol" SG_ 2147548420 Direct_Lamp_Control_Data_2_RawPa "Di
 BA_ "SystemSignalLongSymbol" SG_ 2147548421 Direct_Lamp_Control_Data_1_RawPa "Direct_Lamp_Control_Data_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548422 Direct_Lamp_Control_Command_2_Ra "Direct_Lamp_Control_Command_2_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548423 Direct_Lamp_Control_Command_1_Ra "Direct_Lamp_Control_Command_1_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548425 High_Resolution_Fuel_Consumption "High_Resolution_Fuel_Consumption_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548426 Aftertreatment_2_Outlet_Gas_NOx_ "Aftertreatment_2_Outlet_Gas_NOx__RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548427 Aftertreatment_2_Outlet_Gas_NOx_ "Aftertreatment_2_Outlet_Gas_NOx__RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548428 Aftertreatment_2_Intake_Gas_NOx_ "Aftertreatment_2_Intake_Gas_NOx__RawPayload";
@@ -18804,7 +18704,6 @@ BA_ "SystemSignalLongSymbol" SG_ 2147548536 Aftertreatment_2_Trip_Informatio "Af
 BA_ "SystemSignalLongSymbol" SG_ 2147548537 Aftertreatment_1_Trip_Informatio "Aftertreatment_1_Trip_Informatio_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548538 Aftertreatment_2_Service_1_RawPa "Aftertreatment_2_Service_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548539 Aftertreatment_1_Service_1_RawPa "Aftertreatment_1_Service_1_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548540 Diesel_Particulate_Filter_Contro "Diesel_Particulate_Filter_Contro_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548541 Reserved_for_FMS_Telltale_status "Reserved_for_FMS_Telltale_status_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548542 Adaptive_Front_Lighting_System_S "Adaptive_Front_Lighting_System_S_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548543 Engine_Configuration_2_RawPayloa "Engine_Configuration_2_RawPayload";
@@ -19087,21 +18986,13 @@ BA_ "SystemSignalLongSymbol" SG_ 2147548886 Hybrid_or_EV_System_Inputs_1_Raw "Hy
 BA_ "SystemSignalLongSymbol" SG_ 2147548889 Auxiliary_Input_Output_Status_1_ "Auxiliary_Input_Output_Status_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548891 Engine_Fluid_Level_Pressure_2_Ra "Engine_Fluid_Level_Pressure_2_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548894 Engine_Air_Start_Pressure_RawPay "Engine_Air_Start_Pressure_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548895 Electronic_Engine_Controller_3_R "Electronic_Engine_Controller_3_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548897 Retarder_Configuration_RawPayloa "Retarder_Configuration_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548898 Transmission_Configuration_RawPa "Transmission_Configuration_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548899 Engine_Configuration_1_RawPayloa "Engine_Configuration_1_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548901 Engine_Hours_Revolutions_RawPayl "Engine_Hours_Revolutions_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548904 Vehicle_Direction_Speed_RawPaylo "Vehicle_Direction_Speed_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548905 Fuel_Consumption_Liquid_1_RawPay "Fuel_Consumption_Liquid_1_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548908 Vehicle_Identification_RawPayloa "Vehicle_Identification_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548909 Cruise_Control_Vehicle_Speed_Set "Cruise_Control_Vehicle_Speed_Set_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548911 Engine_Fluid_Level_Pressure_1_Ra "Engine_Fluid_Level_Pressure_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548912 Power_Takeoff_Information_1_RawP "Power_Takeoff_Information_1_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548913 Cruise_Control_Vehicle_Speed_1_R "Cruise_Control_Vehicle_Speed_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548916 Tire_Condition_Message_1_RawPayl "Tire_Condition_Message_1_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548918 Intake_Exhaust_Conditions_1_RawP "Intake_Exhaust_Conditions_1_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548919 Vehicle_Electrical_Power_1_RawPa "Vehicle_Electrical_Power_1_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548926 Auxiliary_Water_Pump_Pressure_Ra "Auxiliary_Water_Pump_Pressure_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147609856 NMEA_Request_Command_Acknowledge "NMEA_Request_Command_Acknowledge_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147610112 PGN_List_Transmit_Receive_PGN_s_ "PGN_List_Transmit_Receive_PGN_s__RawPayload";

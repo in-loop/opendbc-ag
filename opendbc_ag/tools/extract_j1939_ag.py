@@ -293,16 +293,9 @@ PGN_DEFINITIONS: list[P] = [
                 factor=0.5, offset=0, unit="kPa"),
         ],
     ),
-    P(
-        pgn=0xFEEB,  # 65259
-        name="J1939_CI_ComponentIdentification",
-        description="Component manufacturer + model + serial — multipacket BAM",
-        source=WIKIPEDIA_J1939,
-        signals=[
-            Sig(name="ComponentIdent_FirstChar", start_bit=0, length=8,
-                comment="ASCII byte 0; full string spans multipacket transport"),
-        ],
-    ),
+    # Note: 0xFEEB (Component Identification) intentionally omitted here —
+    # AgIsoStack++ extraction (Phase 2) is authoritative for that PGN. See
+    # iso11783_from_agisostack.dbc :: ComponentIdentification.
     P(
         pgn=0xFCB2,  # 64690
         name="J1939_FFE_FuelEconomyExtended",

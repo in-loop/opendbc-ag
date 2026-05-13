@@ -5,8 +5,8 @@
   "scraped_pages": 34,
   "total_scraped": 3212,
   "rejected_proprietary": 257,
-  "deduplicated_against_agisostack": 46,
-  "final_unique": 2909,
+  "deduplicated_against_agisostack": 63,
+  "final_unique": 2892,
   "entries": [
     {
       "pgn": 256,
@@ -1321,18 +1321,6 @@
       "pgn_hex": "0xF002",
       "name": "Electronic Transmission Controller 1",
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/2318?type=PGN"
-    },
-    {
-      "pgn": 61443,
-      "pgn_hex": "0xF003",
-      "name": "Electronic Engine Controller 2",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/2332?type=PGN"
-    },
-    {
-      "pgn": 61444,
-      "pgn_hex": "0xF004",
-      "name": "Electronic Engine Controller 1",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/2340?type=PGN"
     },
     {
       "pgn": 61445,
@@ -11421,12 +11409,6 @@
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/13238?type=PGN"
     },
     {
-      "pgn": 64690,
-      "pgn_hex": "0xFCB2",
-      "name": "Switched Power Output Current",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/13270?type=PGN"
-    },
-    {
       "pgn": 64691,
       "pgn_hex": "0xFCB3",
       "name": "Fused Power Output Current",
@@ -11935,12 +11917,6 @@
       "pgn_hex": "0xFD08",
       "name": "Engine oil message",
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/13842?type=PGN"
-    },
-    {
-      "pgn": 64777,
-      "pgn_hex": "0xFD09",
-      "name": "High Resolution Fuel Consumption (Liquid)",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/13844?type=PGN"
     },
     {
       "pgn": 64778,
@@ -12613,12 +12589,6 @@
       "pgn_hex": "0xFD7B",
       "name": "Aftertreatment 1 Service 1",
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/14889?type=PGN"
-    },
-    {
-      "pgn": 64892,
-      "pgn_hex": "0xFD7C",
-      "name": "Diesel Particulate Filter Control 1",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/14917?type=PGN"
     },
     {
       "pgn": 64893,
@@ -14019,12 +13989,6 @@
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/16432?type=PGN"
     },
     {
-      "pgn": 65132,
-      "pgn_hex": "0xFE6C",
-      "name": "Tachograph",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/16446?type=PGN"
-    },
-    {
       "pgn": 65133,
       "pgn_hex": "0xFE6D",
       "name": "Heater Information",
@@ -14667,12 +14631,6 @@
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17001?type=PGN"
     },
     {
-      "pgn": 65247,
-      "pgn_hex": "0xFEDF",
-      "name": "Electronic Engine Controller 3",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17010?type=PGN"
-    },
-    {
       "pgn": 65248,
       "pgn_hex": "0xFEE0",
       "name": "Vehicle Distance",
@@ -14691,22 +14649,10 @@
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17029?type=PGN"
     },
     {
-      "pgn": 65251,
-      "pgn_hex": "0xFEE3",
-      "name": "Engine Configuration 1",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17058?type=PGN"
-    },
-    {
       "pgn": 65252,
       "pgn_hex": "0xFEE4",
       "name": "Shutdown",
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17081?type=PGN"
-    },
-    {
-      "pgn": 65253,
-      "pgn_hex": "0xFEE5",
-      "name": "Engine Hours, Revolutions",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17083?type=PGN"
     },
     {
       "pgn": 65255,
@@ -14733,46 +14679,16 @@
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17103?type=PGN"
     },
     {
-      "pgn": 65260,
-      "pgn_hex": "0xFEEC",
-      "name": "Vehicle Identification",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17108?type=PGN"
-    },
-    {
       "pgn": 65261,
       "pgn_hex": "0xFEED",
       "name": "Cruise Control/Vehicle Speed Setup",
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17118?type=PGN"
     },
     {
-      "pgn": 65262,
-      "pgn_hex": "0xFEEE",
-      "name": "Engine Temperature 1",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17124?type=PGN"
-    },
-    {
-      "pgn": 65263,
-      "pgn_hex": "0xFEEF",
-      "name": "Engine Fluid Level/Pressure 1",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17131?type=PGN"
-    },
-    {
       "pgn": 65264,
       "pgn_hex": "0xFEF0",
       "name": "Power Takeoff Information 1",
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17145?type=PGN"
-    },
-    {
-      "pgn": 65265,
-      "pgn_hex": "0xFEF1",
-      "name": "Cruise Control/Vehicle Speed 1",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17165?type=PGN"
-    },
-    {
-      "pgn": 65266,
-      "pgn_hex": "0xFEF2",
-      "name": "Fuel Economy (Liquid)",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17170?type=PGN"
     },
     {
       "pgn": 65267,
@@ -14791,24 +14707,6 @@
       "pgn_hex": "0xFEF5",
       "name": "Ambient Conditions",
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17186?type=PGN"
-    },
-    {
-      "pgn": 65270,
-      "pgn_hex": "0xFEF6",
-      "name": "Intake/Exhaust Conditions 1",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17193?type=PGN"
-    },
-    {
-      "pgn": 65271,
-      "pgn_hex": "0xFEF7",
-      "name": "Vehicle Electrical Power 1",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17198?type=PGN"
-    },
-    {
-      "pgn": 65272,
-      "pgn_hex": "0xFEF8",
-      "name": "Transmission Fluids 1",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/17206?type=PGN"
     },
     {
       "pgn": 65273,

@@ -103,9 +103,6 @@ BO_ 2147548918 J1939_IC1_InletExhaustConditions: 8 Vector__XXX
  SG_ ExhaustGasTemp : 40|16@1+ (0.03125,-273) [-273.00000|1774.96875] "°C" Vector__XXX
  SG_ CoolantFilterDifferentialPressur : 56|8@1+ (0.5,0) [0|127.5] "kPa" Vector__XXX
 
-BO_ 2147548907 J1939_CI_ComponentIdentification: 8 Vector__XXX
- SG_ ComponentIdent_FirstChar : 0|8@1+ (1,0) [0|255] "" Vector__XXX
-
 BO_ 2147548338 J1939_FFE_FuelEconomyExtended: 8 Vector__XXX
  SG_ EngineTripFuel : 0|32@1+ (0.5,0) [0|2147483647.5] "L" Vector__XXX
  SG_ EngineTotalFuelUsed : 32|32@1+ (0.5,0) [0|2147483647.5] "L" Vector__XXX
@@ -130,14 +127,12 @@ CM_ BO_ 2147548895  "Engine demand percent torque + nominal friction torque. Sou
 CM_ BO_ 2147545091  "Accelerator pedal + percent load. Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
 CM_ BO_ 2147548920  "Transmission oil + clutch pressure. Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
 CM_ BO_ 2147548918  "Boost + intake air temp + air filter differential pressure. Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
-CM_ BO_ 2147548907  "Component manufacturer + model + serial  multipacket BAM. Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
 CM_ BO_ 2147548338  "Trip fuel + total fuel + trip distance. Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
 CM_ BO_ 2147548425  "High-resolution total vehicle distance. Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
 
 CM_ SG_ 2147545092 ActualEngineTorquePct "Actual engine percent torque";
 CM_ SG_ 2147545092 SourceAddressOfControllingDevice "Source address of the device commanding engine torque";
 CM_ SG_ 2147548908 VIN_Char01 "ASCII byte 0 of VIN; full VIN spans multipacket";
-CM_ SG_ 2147548907 ComponentIdent_FirstChar "ASCII byte 0; full string spans multipacket transport";
 
 
 BA_DEF_ BO_ "SystemMessageLongSymbol" STRING;

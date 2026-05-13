@@ -7,8 +7,8 @@
   ],
   "license_note": "No paywalled SAE J1939 PDF content has been transcribed. All signal definitions are derived from publicly-summarized content. Verify against your equipment's actual J1939 documentation before production use.",
   "extraction_date": "2026-05-13",
-  "pgn_count": 18,
-  "signal_count": 70,
+  "pgn_count": 17,
+  "signal_count": 69,
   "pgns": [
     {
       "pgn": 61444,
@@ -821,26 +821,6 @@
           "offset": 0,
           "unit": "kPa",
           "comment": "",
-          "value_table": {}
-        }
-      ]
-    },
-    {
-      "pgn": 65259,
-      "pgn_hex": "0xFEEB",
-      "pgn_decimal": 65259,
-      "name": "J1939_CI_ComponentIdentification",
-      "description": "Component manufacturer + model + serial \u2014 multipacket BAM",
-      "source": "Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)",
-      "signals": [
-        {
-          "name": "ComponentIdent_FirstChar",
-          "start_bit": 0,
-          "length": 8,
-          "factor": 1.0,
-          "offset": 0.0,
-          "unit": "",
-          "comment": "ASCII byte 0; full string spans multipacket transport",
           "value_table": {}
         }
       ]

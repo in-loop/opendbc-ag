@@ -217,17 +217,23 @@ def main() -> int:
     rejected = [e for e in all_entries if is_proprietary(e.pgn)]
     print(f"Rejected {len(rejected)} proprietary-range entries.")
 
-    # De-duplicate against AgIsoStack++ extraction (Phase 2)
-    agisostack_json = repo / "extractions/agisostack_pgns.json"
-    agisostack_pgns: set[int] = set()
-    if agisostack_json.exists():
-        data = json.loads(agisostack_json.read_text())
-        agisostack_pgns = {p["pgn"] for p in data["pgns"]}
-        print(f"Loaded {len(agisostack_pgns)} PGN IDs from AgIsoStack++ extraction for de-dup.")
+    # De-duplicate against other DBCs that have richer signal-level content
+    # (Phase 2 AgIsoStack++ + Phase 4 J1939 ag-subset).
+    higher_priority_pgns: set[int] = set()
+    for path in (
+        repo / "extractions/agisostack_pgns.json",
+        repo / "extractions/j1939_ag_pgns.json",
+    ):
+        if path.exists():
+            data = json.loads(path.read_text())
+            ids = {p["pgn"] for p in data["pgns"]}
+            higher_priority_pgns |= ids
+            print(f"Loaded {len(ids)} PGN IDs from {path.name} for de-dup.")
+    print(f"Total higher-priority PGN IDs (will be skipped in VDMA DBC): {len(higher_priority_pgns)}")
 
-    unique = [e for e in valid if e.pgn not in agisostack_pgns]
-    deduped = [e for e in valid if e.pgn in agisostack_pgns]
-    print(f"De-duplicated {len(deduped)} entries already covered by AgIsoStack++ extraction.")
+    unique = [e for e in valid if e.pgn not in higher_priority_pgns]
+    deduped = [e for e in valid if e.pgn in higher_priority_pgns]
+    print(f"De-duplicated {len(deduped)} entries already covered by signal-level DBCs.")
     print(f"Final unique entries for VDMA DBC: {len(unique)}")
 
     # Save intermediate JSON
