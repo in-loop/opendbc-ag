@@ -22,25 +22,28 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
 
-      - name: Enforce pure-standard PGN policy (reject 0xEF00 + 0xFF00..0xFFFF)
+      - name: Enforce pure-standard scope policy (DP0+DP1 proprietary + name patterns)
         run: |
           python -c "
           from pathlib import Path
           from canmatrix import formats
+          from opendbc_ag.tools._scope_policy import is_in_scope, reject_reason
           violations = []
           for dbc in Path('opendbc_ag/dbc').glob('*.dbc'):
               m = formats.loadp(str(dbc))
               mat = list(m.values())[0]
               for frame in mat.frames:
                   pgn = frame.arbitration_id.id
-                  if pgn == 0xEF00 or 0xFF00 <= pgn <= 0xFFFF:
-                      violations.append(f'{dbc.name}: {frame.name} (PGN 0x{pgn:X}) is in proprietary range')
+                  if not is_in_scope(pgn, frame.name):
+                      violations.append(f'{dbc.name}: {frame.name} (PGN 0x{pgn:X}) — {reject_reason(pgn, frame.name)}')
           if violations:
-              print('CI FAIL: proprietary-range PGNs found in DBC corpus.')
-              for v in violations:
+              print(f'CI FAIL: {len(violations)} out-of-scope frame(s) found in DBC corpus:')
+              for v in violations[:30]:
                   print(f'  {v}')
+              if len(violations) > 30:
+                  print(f'  ... and {len(violations) - 30} more')
               raise SystemExit(1)
-          print('OK: no proprietary-range PGNs in DBC corpus.')
+          print('OK: no out-of-scope frames in DBC corpus.')
           "
 
       - name: Detect cross-DBC duplicate PGN IDs

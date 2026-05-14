@@ -7,6 +7,8 @@ from pathlib import Path
 import pytest
 from canmatrix import formats
 
+from opendbc_ag.tools._scope_policy import is_in_scope, reject_reason
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DBC_DIR = REPO_ROOT / "opendbc_ag/dbc"
@@ -28,16 +30,21 @@ def test_dbc_parses(dbc_path: Path) -> None:
 
 
 def test_no_proprietary_pgns() -> None:
-    """Pure-standard scope: reject PGNs in 0xEF00 or 0xFF00..0xFFFF."""
+    """Pure-standard scope: reject DP0+DP1 proprietary ranges AND non-standard name patterns.
+
+    Uses opendbc_ag.tools._scope_policy as the single source of truth.
+    """
     violations = []
     for dbc_path in _dbc_files():
         m = formats.loadp(str(dbc_path))
         mat = list(m.values())[0]
         for frame in mat.frames:
             pgn = frame.arbitration_id.id
-            if pgn == 0xEF00 or 0xFF00 <= pgn <= 0xFFFF:
-                violations.append(f"{dbc_path.name}: {frame.name} (PGN 0x{pgn:X})")
-    assert not violations, f"proprietary-range PGNs found: {violations}"
+            if not is_in_scope(pgn, frame.name):
+                violations.append(
+                    f"{dbc_path.name}: {frame.name} (PGN 0x{pgn:X}) — {reject_reason(pgn, frame.name)}"
+                )
+    assert not violations, f"out-of-scope frames found ({len(violations)}): {violations[:10]}"
 
 
 def test_no_cross_dbc_duplicates() -> None:

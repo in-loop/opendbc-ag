@@ -24,19 +24,8 @@ from dataclasses import dataclass, field, asdict
 from pathlib import Path
 
 
-# Proprietary PGN ranges per ISO 11783 / J1939 convention
-PROPRIETARY_A = 0xEF00  # peer-to-peer proprietary
-PROPRIETARY_B_LO = 0xFF00  # broadcast proprietary low
-PROPRIETARY_B_HI = 0xFFFF  # broadcast proprietary high
-
-
-def is_proprietary(pgn: int) -> bool:
-    """Reject anything in the proprietary ranges per pure-standard scope policy."""
-    if pgn == PROPRIETARY_A:
-        return True
-    if PROPRIETARY_B_LO <= pgn <= PROPRIETARY_B_HI:
-        return True
-    return False
+# Proprietary-range predicate lives in _scope_policy (centralized, DP0+DP1 + name patterns).
+from opendbc_ag.tools._scope_policy import is_in_scope, reject_reason
 
 
 @dataclass
@@ -428,10 +417,12 @@ def main() -> int:
     all_pgns = parse_pgn_enum(enum_header)
     print(f"Parsed {len(all_pgns)} PGN enum entries.")
 
-    # Phase 2b: filter proprietary
-    valid_pgns = [p for p in all_pgns if not is_proprietary(p.pgn)]
-    rejected = [p for p in all_pgns if is_proprietary(p.pgn)]
-    print(f"Rejected {len(rejected)} proprietary-range PGNs: {[p.name for p in rejected]}")
+    # Phase 2b: filter via centralized scope policy (DP0+DP1 ranges + name patterns)
+    valid_pgns = [p for p in all_pgns if is_in_scope(p.pgn, p.name)]
+    rejected = [p for p in all_pgns if not is_in_scope(p.pgn, p.name)]
+    print(f"Rejected {len(rejected)} out-of-scope PGNs:")
+    for p in rejected:
+        print(f"  - {p.pgn:#X} {p.name!r}: {reject_reason(p.pgn, p.name)}")
     print(f"Retained {len(valid_pgns)} pure-standard PGNs.")
 
     # Phase 2c: enrich subset with signal-level data

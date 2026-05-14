@@ -323,12 +323,7 @@ PGN_DEFINITIONS: list[P] = [
 ]
 
 
-def is_proprietary(pgn: int) -> bool:
-    if pgn == 0xEF00:
-        return True
-    if 0xFF00 <= pgn <= 0xFFFF:
-        return True
-    return False
+from opendbc_ag.tools._scope_policy import is_in_scope, reject_reason
 
 
 def main() -> int:
@@ -337,10 +332,12 @@ def main() -> int:
     args = parser.parse_args()
     repo = args.repo_root
 
-    valid = [p for p in PGN_DEFINITIONS if not is_proprietary(p.pgn)]
-    rejected = [p for p in PGN_DEFINITIONS if is_proprietary(p.pgn)]
+    valid = [p for p in PGN_DEFINITIONS if is_in_scope(p.pgn, p.name)]
+    rejected = [p for p in PGN_DEFINITIONS if not is_in_scope(p.pgn, p.name)]
     print(f"Total curated J1939 ag-subset PGNs: {len(PGN_DEFINITIONS)}")
-    print(f"Rejected proprietary: {len(rejected)}")
+    print(f"Rejected out-of-scope: {len(rejected)}")
+    for p in rejected:
+        print(f"  - {p.pgn:#X} {p.name!r}: {reject_reason(p.pgn, p.name)}")
     print(f"Retained: {len(valid)}")
     print(f"Total signals: {sum(len(p.signals) for p in valid)}")
 

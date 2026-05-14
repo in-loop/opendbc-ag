@@ -38,17 +38,8 @@ from bs4 import BeautifulSoup
 USER_AGENT = "opendbc-ag-bot/0.1 (+https://github.com/in-loop/opendbc-ag; pure-standard ISO 11783 DBC corpus)"
 REQUEST_DELAY_SEC = 2.0
 LIST_URL = "https://www.isobus.net/isobus/pGNAndSPN/index"
-PROPRIETARY_A = 0xEF00
-PROPRIETARY_B_LO = 0xFF00
-PROPRIETARY_B_HI = 0xFFFF
 
-
-def is_proprietary(pgn: int) -> bool:
-    if pgn == PROPRIETARY_A:
-        return True
-    if PROPRIETARY_B_LO <= pgn <= PROPRIETARY_B_HI:
-        return True
-    return False
+from opendbc_ag.tools._scope_policy import is_in_scope, reject_reason
 
 
 @dataclass
@@ -212,10 +203,14 @@ def main() -> int:
 
     print(f"\nTotal entries scraped: {len(all_entries)}")
 
-    # Filter proprietary
-    valid = [e for e in all_entries if not is_proprietary(e.pgn)]
-    rejected = [e for e in all_entries if is_proprietary(e.pgn)]
-    print(f"Rejected {len(rejected)} proprietary-range entries.")
+    # Filter via centralized scope policy (DP0+DP1 ranges + name patterns)
+    valid = [e for e in all_entries if is_in_scope(e.pgn, e.name)]
+    rejected = [e for e in all_entries if not is_in_scope(e.pgn, e.name)]
+    print(f"Rejected {len(rejected)} out-of-scope entries.")
+    for e in rejected[:10]:
+        print(f"  - {e.pgn:#X} {e.name!r}: {reject_reason(e.pgn, e.name)}")
+    if len(rejected) > 10:
+        print(f"  ... and {len(rejected) - 10} more")
 
     # De-duplicate against other DBCs that have richer signal-level content
     # (Phase 2 AgIsoStack++ + Phase 4 J1939 ag-subset).
