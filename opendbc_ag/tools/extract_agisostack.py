@@ -401,6 +401,20 @@ def main() -> int:
     args = parser.parse_args()
     repo = args.repo_root
 
+    # Commit pin gate: refuse to run without a recorded upstream SHA.
+    # Re-running against `main` six months from now silently parses a moved target.
+    pin_file = repo / "extractions/AGISOSTACK_PIN.txt"
+    if not pin_file.exists():
+        print(
+            "ERROR: extractions/AGISOSTACK_PIN.txt is missing.\n"
+            "Record the upstream AgIsoStack++ commit SHA that this extraction\n"
+            "should be reproducible against, then re-run.",
+            file=sys.stderr,
+        )
+        return 1
+    pinned_sha = pin_file.read_text().strip().split()[0]
+    print(f"AgIsoStack++ pin: {pinned_sha}")
+
     enum_header = (
         repo
         / "extractions/agisostack_clone/isobus/include/isobus/isobus/can_general_parameter_group_numbers.hpp"
@@ -408,7 +422,7 @@ def main() -> int:
     if not enum_header.exists():
         print(f"ERROR: AgIsoStack++ enum header not found at {enum_header}", file=sys.stderr)
         print(
-            "Run: cd extractions && git clone --depth 1 https://github.com/Open-Agriculture/AgIsoStack-plus-plus.git agisostack_clone",
+            f"Run: cd extractions && git clone https://github.com/Open-Agriculture/AgIsoStack-plus-plus.git agisostack_clone && cd agisostack_clone && git checkout {pinned_sha}",
             file=sys.stderr,
         )
         return 1
@@ -439,10 +453,12 @@ def main() -> int:
 
     # Save intermediate JSON
     out_json = repo / "extractions/agisostack_pgns.json"
+    from datetime import datetime, timezone
     payload = {
         "source": "Open-Agriculture/AgIsoStack-plus-plus",
         "source_license": "MIT",
-        "extraction_date": "2026-05-13",
+        "source_commit_pin": pinned_sha,
+        "extraction_date": datetime.now(timezone.utc).date().isoformat(),
         "pgn_count_total": len(all_pgns),
         "pgn_count_rejected_proprietary": len(rejected),
         "pgn_count_valid": len(valid_pgns),

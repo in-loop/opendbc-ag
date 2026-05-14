@@ -355,7 +355,7 @@ def main() -> int:
             "definitions are derived from publicly-summarized content. Verify "
             "against your equipment's actual J1939 documentation before production use."
         ),
-        "extraction_date": "2026-05-13",
+        "extraction_date": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).date().isoformat(),
         "pgn_count": len(valid),
         "signal_count": sum(len(p.signals) for p in valid),
         "pgns": [

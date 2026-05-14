@@ -69,11 +69,15 @@ def anonymize_log_csv(
         writer = csv.writer(fout)
         writer.writerow(["timestamp", "can_id", "data_hex"])
 
-        for row in reader:
-            ts = float(row["timestamp"])
-            raw_cid = row["can_id"].strip()
-            cid = int(raw_cid, 0) if raw_cid.startswith("0x") else int(raw_cid)
-            data = bytes.fromhex(row["data_hex"])
+        for i, row in enumerate(reader, start=2):  # row 1 is header
+            try:
+                ts = float(row["timestamp"])
+                cid = int(str(row["can_id"]).strip(), 0)
+                data = bytes.fromhex(row["data_hex"])
+            except (ValueError, KeyError, TypeError) as e:
+                raise ValueError(
+                    f"{input_path}: failed to parse row {i} ({row!r}): {e}"
+                ) from e
 
             if strip_sa and cid > 0xFFFF:
                 cid = strip_source_address_j1939(cid)

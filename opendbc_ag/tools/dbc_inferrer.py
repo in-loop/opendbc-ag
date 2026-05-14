@@ -48,10 +48,15 @@ def load_csv(path: Path) -> list[tuple[float, int, bytes]]:
     out = []
     with path.open() as f:
         reader = csv.DictReader(f)
-        for row in reader:
-            ts = float(row["timestamp"])
-            cid = int(row["can_id"], 0) if isinstance(row["can_id"], str) and row["can_id"].startswith("0x") else int(row["can_id"])
-            data = bytes.fromhex(row["data_hex"])
+        for i, row in enumerate(reader, start=2):  # row 1 is header
+            try:
+                ts = float(row["timestamp"])
+                cid = int(str(row["can_id"]).strip(), 0)
+                data = bytes.fromhex(row["data_hex"])
+            except (ValueError, KeyError, TypeError) as e:
+                raise ValueError(
+                    f"{path}: failed to parse row {i} ({row!r}): {e}"
+                ) from e
             out.append((ts, cid, data))
     return out
 

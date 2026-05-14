@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+  Synthetic isobus.net list-page fixture for testing parse_list_html.
+  Mirrors the relevant table-row + pagination shape of the live page.
+  Do NOT use as a substitute for re-scraping; this is parser-shape regression coverage only.
+-->
+<html lang="en">
+<head><title>VDMA Data Dictionary — PGN list (fixture)</title></head>
+<body>
+<table class="pgn-table">
+  <thead>
+    <tr><th>PGN</th><th>Name</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>256</td>
+      <td>Transmission Control 1</td>
+      <td><a href="/isobus/pGNAndSPN/38?type=PGN">view</a></td>
+    </tr>
+    <tr>
+      <td>0xFE48</td>
+      <td>Wheel-based Speed and Distance</td>
+      <td><a href="/isobus/pGNAndSPN/123?type=PGN">view</a></td>
+    </tr>
+    <tr>
+      <td>not-a-number</td>
+      <td>Garbage row that should be skipped</td>
+      <td><a href="/isobus/pGNAndSPN/9999?type=PGN">view</a></td>
+    </tr>
+    <tr>
+      <td>65217</td>
+      <td>High Resolution Vehicle Distance</td>
+      <td><a href="/isobus/pGNAndSPN/456?type=PGN">view</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<ul class="pagination">
+  <li><a href="?PGNAndSPN_page=1">First</a></li>
+  <li><a href="?PGNAndSPN_page=2">2</a></li>
+  <li><a href="?PGNAndSPN_page=33">Last</a></li>
+</ul>
+</body>
+</html>

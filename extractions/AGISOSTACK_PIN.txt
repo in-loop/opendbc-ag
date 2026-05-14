@@ -1,0 +1,19 @@
+# Upstream AgIsoStack++ commit SHA that the cached
+# extractions/agisostack_pgns.json was derived from.
+#
+# To reproduce the agisostack DBC extraction:
+#   cd extractions
+#   git clone https://github.com/Open-Agriculture/AgIsoStack-plus-plus.git agisostack_clone
+#   cd agisostack_clone && git checkout <sha-on-first-non-comment-line>
+#   cd ../.. && python -m opendbc_ag.tools.extract_agisostack
+#
+# The pin file is required — extract_agisostack.py refuses to run without it.
+# Update the SHA when re-pulling upstream content; record the change in
+# CHANGELOG.md and the extracted JSON's source_commit_pin field.
+#
+# Original extraction (v0.1.0-private, 2026-05-13) was against AgIsoStack++
+# main HEAD at that date. The exact SHA was not recorded at the time — this
+# pin is being introduced retroactively. Treat the current cached
+# `extractions/agisostack_pgns.json` as authoritative until the next refresh,
+# at which point the new SHA gets pinned here.
+unknown-2026-05-13
