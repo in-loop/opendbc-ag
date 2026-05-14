@@ -12,7 +12,8 @@ opendbc-ag is the OSS canonical ag-CAN DBC repository. Contributions are welcome
 
 **We do NOT accept:**
 
-- PGNs in proprietary ranges `0xEF00` or `0xFF00..0xFFFF` (CI auto-rejects)
+- PGNs in proprietary ranges `0xEF00` / `0x1EF00` (Proprietary A & A2) or `0xFF00..0xFFFF` / `0x1FF00..0x1FFFF` (Proprietary B, DP0+DP1) — CI auto-rejects
+- Entries named `Proprietary*` or `Reserved*` — CI auto-rejects regardless of PGN range
 - Reverse-engineered OEM proprietary CAN bus data (John Deere, CNH, AGCO, Kubota, Kinze, Hagie, Brent, or any other OEM proprietary content)
 - Content transcribed verbatim from paywalled spec PDFs (ISO 11783-X, SAE J1939-X)
 - Anything that would violate the OEM's TOS or DMCA §1201 absent a research/repair exemption
@@ -62,11 +63,13 @@ When the manual-phase capture work begins, raw CAN traces will land in `corpus/`
 
 1. Fork the repo
 2. Create a feature branch (`feat/<short-description>`)
-3. Make changes locally; run `pytest` to confirm 6/6 smoke tests pass
+3. Make changes locally; run `pytest opendbc_ag/tests/` to confirm the full suite passes (76+ tests; 6 structural-minimum smoke tests in `test_smoke.py`)
 4. Open a PR against `main`
-5. Fill out the PR template (source citation, scope check, CI green, signal-naming compliance)
+5. Fill out the PR template (source citation, scope check, CI green, signal-naming compliance, AI-assistance disclosure)
 6. Address review feedback
 7. Squash-merge once approved
+
+Note: PRs from forks run with a read-only `GITHUB_TOKEN` — CI works as expected since this project doesn't auto-push from PR jobs.
 
 ## Code of conduct
 
@@ -74,8 +77,8 @@ By participating you agree to the [Contributor Covenant 2.1](docs/code-of-conduc
 
 ## License of contributions
 
-By submitting a PR you agree your contribution is offered under the [MIT License](LICENSE) matching this repo's licensing.
+By submitting a PR you assert authorship (or the right to contribute the change) and offer it under the [MIT License](LICENSE), matching this repo's outbound licensing — i.e. **inbound = outbound, no separate CLA or DCO sign-off required**. If your contribution embeds material from another source, cite that source and confirm its license is compatible with MIT.
 
 ## Questions?
 
-Open a [discussion](https://github.com/in-loop/opendbc-ag/discussions) or a bug-report issue.
+Open a discussion (`../../discussions`) or a bug-report issue using the templates in `.github/ISSUE_TEMPLATE/`.

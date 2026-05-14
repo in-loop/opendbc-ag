@@ -30,24 +30,26 @@ You can include as much or as little detail as you choose. Reporters may use a p
 
 **Maintainer responsible for enforcement:** `ctyoungb`
 
-### 3. Conflict of interest
+### 3. Conflict of interest (best-effort, single-maintainer project)
 
-If a report concerns the maintainer themself, or someone the maintainer has a close personal or professional tie to, the maintainer will recuse from the decision and ask an independent reviewer to handle the report. Until the project has a second maintainer or an external trust-and-safety contact, the maintainer will publicly name the reviewer of record at the time of the decision, so the chain of custody is auditable.
+This is a single-maintainer project. If a report concerns the maintainer themself, or someone the maintainer has a close personal or professional tie to, the maintainer will recuse from the decision and ask an external reviewer to handle the report. A standing external reviewer-of-record has not yet been named; if a conflict situation arises before one is, the maintainer will publicly name a reviewer at decision time and document the choice. This is an acknowledged gap of the current single-maintainer phase — expect this section to tighten as the project grows.
 
 ### 4. Appeals
 
-A person subject to an enforcement action may request reconsideration once, in writing, within 30 days. The appeal will be reviewed by someone who was not the original decision-maker where that is possible; otherwise the original decision-maker will reconsider with reasons documented. Appeals do not pause the action while under review.
+A person subject to an enforcement action may request reconsideration once, in writing, within 30 days. The appeal will be reviewed by someone who was not the original decision-maker where that is possible (see §3 on the single-maintainer constraint); otherwise the original decision-maker will reconsider with reasons documented. Appeals do not pause the action while under review.
 
 ### 5. Reporter privacy
 
-We retain the minimum information needed to act on a report and to handle appeals. We do not share reporter identity with the reported party without the reporter's explicit consent, except where required by law. Records of closed reports are kept for two years and then deleted.
+We retain only what is needed to act on a report and handle appeals, and purge it when no longer needed. We do not share reporter identity with the reported party without the reporter's explicit consent, except where required by law. Concretely: report email + thread is stored in the maintainer's personal mail archive (outside this repository); no retention SOP beyond that is published. If the project's report volume ever justifies a formal retention schedule, this section will be replaced with one.
 
 ### 6. AI-assisted contributions
 
 You may use AI tools (LLM coding assistants, transcript tools, etc.) to help prepare contributions. Two expectations:
 
 - **You are responsible for what you submit.** Review the output; do not paste in suggestions you have not read.
-- **Disclose substantive AI assistance** in the pull request description — one line is enough. This protects reviewers' time and helps us catch hallucinated PGN/signal definitions, which is a real failure mode in this domain.
+- **Disclose substantive AI assistance** in the pull request description — one line is enough. The PR template includes a checkbox for this. The disclosure protects reviewers' time and helps us catch hallucinated PGN/signal definitions, which is a real failure mode in this domain.
+
+The load-bearing safeguard against hallucinated content is the source-citation requirement in `CONTRIBUTING.md` and the PR template, not this section. Treat the AI-disclosure rule as a norm-setting expectation; the citation check is what gates merge.
 
 Bulk AI-generated drive-by PRs (no human review, no source citation, low-context) will be closed without merge.
 
@@ -65,10 +67,10 @@ This is not a vulnerability-disclosure program — opendbc-ag does not produce b
 opendbc-ag exists to document **publicly-summarized** ag-CAN content. The project does not, and will not, host:
 
 - Transcriptions of paywalled spec text (ISO, SAE).
-- Reverse-engineered OEM proprietary CAN content (anything in the PGN ranges `0xEF00` or `0xFF00..0xFFFF`).
-- Material whose primary purpose is to circumvent a technological protection measure on equipment you do not own.
+- Reverse-engineered OEM proprietary CAN content (anything in the PGN ranges `0xEF00` / `0x1EF00` / `0xFF00..0xFFFF` / `0x1FF00..0x1FFFF`, or anything named `Proprietary*` / `Reserved*`).
+- Material whose primary purpose is to circumvent a technological protection measure.
 
-Contributors are responsible for the legality of their own actions on their own equipment under their own jurisdiction. This code of conduct does not grant any legal advice, indemnity, or §1201 exemption.
+Contributors are responsible for the legality of their own actions on their own equipment under their own jurisdiction. This code of conduct does not grant any legal advice, indemnity, or §1201 exemption — see [`docs/legal-context.md`](legal-context.md) for the broader legal landscape.
 
 Discussions of right-to-repair policy, OEM service practices, and the legal landscape (FTC v Deere, Iowa HF 2763, FARM Act, the §1201 repair exemption) are welcome in issues and discussions — they are part of why this project exists. Personal attacks on companies, employees, regulators, or contributors are not.
 

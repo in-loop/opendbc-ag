@@ -24,7 +24,7 @@ The items below are public-record landmarks contributors might want to know abou
 
 ### FTC v. Deere & Co. (Federal Trade Commission)
 
-In January 2025, the U.S. Federal Trade Commission and the attorneys general of Illinois and Minnesota filed suit against Deere alleging anti-competitive conduct around repair tools and parts. The case is ongoing as of this writing. The complaint and subsequent filings are public via the FTC's case-record portal.
+In January 2025, the U.S. Federal Trade Commission and the attorneys general of Illinois and Minnesota filed suit against Deere alleging anti-competitive conduct around repair tools and parts. Case status is publicly trackable on the FTC's case-record portal.
 
 What it means for this project: a federal regulator is actively examining the dealer-network/repair model that motivates much of the right-to-repair conversation. We are not party to the case.
 

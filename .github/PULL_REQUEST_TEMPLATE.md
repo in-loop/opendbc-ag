@@ -20,15 +20,20 @@
 
 ## Scope policy check
 
-- [ ] PGN ID is NOT in proprietary range (`0xEF00` or `0xFF00..0xFFFF`)
+- [ ] PGN ID is NOT in proprietary range (`0xEF00` / `0x1EF00` / `0xFF00..0xFFFF` / `0x1FF00..0x1FFFF`)
+- [ ] Frame/signal name is not `Proprietary*` or `Reserved*`
 - [ ] Source is public (not transcribed from paywalled spec PDF)
 - [ ] No OEM proprietary CAN content reverse-engineered
 
 ## CI check
 
-- [ ] `pytest` passes locally (6/6 smoke tests minimum)
-- [ ] `canmatrix --check` parses all DBC files without errors
+- [ ] `pytest opendbc_ag/tests/` passes locally (76+ tests; 6 structural-minimum in `test_smoke.py`)
+- [ ] `python scripts/check_dbc_policy.py` returns 0
 - [ ] No new cross-DBC duplicate PGN IDs introduced
+
+## AI-assistance disclosure
+
+- [ ] I disclosed substantive AI assistance in the PR description if any (per CoC §6). N/A is fine.
 
 ## Signal-naming convention
 

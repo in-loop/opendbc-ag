@@ -227,7 +227,7 @@ pytest opendbc_ag/tests/
 
 ### 6c. Anonymize any included log
 
-If your PR also adds a sample log to `corpus/`, run it through the anonymizer first to strip GPS, machine IDs, and timestamps. See `opendbc_ag/tools/anonymize.py` (Phase 9 deliverable).
+If your PR also adds a sample log to `corpus/`, run it through `opendbc_ag/tools/anonymize.py` first to strip GPS, machine IDs, and timestamps.
 
 ### 6d. Open the PR
 
