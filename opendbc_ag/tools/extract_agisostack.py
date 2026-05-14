@@ -386,7 +386,15 @@ def build_dbc(pgns: list[Pgn], dbc_out: Path) -> int:
             frame.add_signal(sig)
         matrix.add_frame(frame)
 
-    formats.dumpp({"": matrix}, str(dbc_out))
+    formats.dumpp(
+        {"": matrix},
+        str(dbc_out),
+        dbcExportEncoding="utf-8",
+        dbcExportCommentEncoding="utf-8",
+    )
+    from opendbc_ag.tools.extract_j1939_ag import _clean_numeric_tokens, _set_baudrate
+    _clean_numeric_tokens(dbc_out)
+    _set_baudrate(dbc_out, 250000)
     return len(pgns)
 
 

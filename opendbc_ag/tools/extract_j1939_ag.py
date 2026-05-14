@@ -326,6 +326,53 @@ PGN_DEFINITIONS: list[P] = [
 from opendbc_ag.tools._scope_policy import is_in_scope, reject_reason
 
 
+def _clean_numeric_tokens(dbc_path: Path) -> None:
+    """Round factor/offset/min/max tokens emitted by canmatrix to 6 decimals.
+
+    canmatrix's writer calls `Decimal(float)` on each numeric, which re-materializes
+    the float's IEEE-754 binary expansion into ugly tokens like
+    `0.40000000000000002220446049250313...` and `0E-056`. We post-process the text
+    to normalize. This is safer than monkey-patching canmatrix internals.
+    """
+    import re
+    from decimal import Decimal
+
+    text = dbc_path.read_text(encoding="utf-8")
+
+    def clean(tok: str) -> str:
+        try:
+            d = Decimal(tok).quantize(Decimal("0.000001")).normalize()
+            s = format(d, "f")
+            if "." in s:
+                s = s.rstrip("0").rstrip(".")
+            return "0" if s in ("", "-0") else s
+        except Exception:
+            return tok
+
+    text = re.sub(
+        r"\(([-0-9.eE+]+),([-0-9.eE+]+)\)",
+        lambda m: f"({clean(m.group(1))},{clean(m.group(2))})",
+        text,
+    )
+    text = re.sub(
+        r"\[([-0-9.eE+]+)\|([-0-9.eE+]+)\]",
+        lambda m: f"[{clean(m.group(1))}|{clean(m.group(2))}]",
+        text,
+    )
+    dbc_path.write_text(text, encoding="utf-8")
+
+
+def _set_baudrate(dbc_path: Path, baudrate: int) -> None:
+    """Inject `BS_: <baudrate>` into a canmatrix-emitted DBC.
+
+    canmatrix's header writer hardcodes `BS_:` empty. Post-process to set the value.
+    """
+    text = dbc_path.read_text(encoding="utf-8")
+    if "BS_:" not in text:
+        raise ValueError(f"{dbc_path}: no BS_ line found")
+    dbc_path.write_text(text.replace("BS_:\n", f"BS_: {baudrate}\n", 1), encoding="utf-8")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo-root", type=Path, default=Path(__file__).resolve().parents[2])
@@ -410,14 +457,23 @@ def main() -> int:
 
     out_dbc = repo / "opendbc_ag/dbc/j1939_ag_subset.dbc"
     # dbcExportEncoding=utf-8 → emits `°C` as UTF-8 (0xC2 0xB0) instead of Latin-1 (0xB0).
-    # dbcExportCommentEncoding=utf-8 → same for CM_ comment text.
     formats.dumpp(
         {"": matrix},
         str(out_dbc),
         dbcExportEncoding="utf-8",
         dbcExportCommentEncoding="utf-8",
     )
-    print(f"Wrote DBC: {out_dbc} ({len(valid)} frames)")
+
+    # canmatrix's serializer calls Decimal(float) internally, which re-expands the
+    # IEEE-754 binary representation of `factor` / `offset` / `min` / `max` into
+    # tokens like `0.40000000000000002220...`. round() upstream is a no-op against
+    # that path. Post-process the emitted text to round to 6 decimals.
+    _clean_numeric_tokens(out_dbc)
+
+    # Inject BS_ baudrate (canmatrix hardcodes `BS_:` empty in the header writer).
+    _set_baudrate(out_dbc, 500000)
+
+    print(f"Wrote DBC: {out_dbc} ({len(valid)} frames, BS_ 500000, UTF-8)")
 
     return 0
 

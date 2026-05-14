@@ -9,7 +9,7 @@ BU_:
 
 
 BO_ 2147527680 AgriculturalGuidanceMachineInfo: 8 Vector__XXX
- SG_ EstimatedCurvature : 0|16@1+ (0.25,-8032) [-8032.00|8351.75] "1/km" Vector__XXX
+ SG_ EstimatedCurvature : 0|16@1+ (0.25,-8032) [-8032|8351.75] "1/km" Vector__XXX
  SG_ MechanicalSystemLockoutState : 16|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ MachineSteeringSystemReadinessSt : 18|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ MachineSteeringSystemCommandExit : 20|6@1+ (1,0) [0|63] "" Vector__XXX
@@ -17,7 +17,7 @@ BO_ 2147527680 AgriculturalGuidanceMachineInfo: 8 Vector__XXX
  SG_ GuidanceRequestStatus : 32|2@1+ (1,0) [0|3] "" Vector__XXX
 
 BO_ 2147527936 AgriculturalGuidanceSystemComman: 8 Vector__XXX
- SG_ CurvatureCommand : 0|16@1+ (0.25,-8032) [-8032.00|8351.75] "1/km" Vector__XXX
+ SG_ CurvatureCommand : 0|16@1+ (0.25,-8032) [-8032|8351.75] "1/km" Vector__XXX
  SG_ CurvatureCommandStatus : 16|2@1+ (1,0) [0|3] "" Vector__XXX
 
 BO_ 2147533568 DiagnosticMessage22: 8 Vector__XXX
@@ -60,7 +60,7 @@ BO_ 2147544576 AddressClaim: 8 Vector__XXX
  SG_ AddressClaim_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
 BO_ 2147545122 MachineSelectedSpeed: 8 Vector__XXX
- SG_ MachineSelectedSpeed : 0|16@1+ (0.001000000000000000020816681711721685132943093776702880859375,0) [0E-060|65.53500000000000136422123598] "m/s" Vector__XXX
+ SG_ MachineSelectedSpeed : 0|16@1+ (0.001,0) [0|65.535] "m/s" Vector__XXX
  SG_ MachineSelectedSpeedDistance : 16|32@1+ (1,0) [0|4294967295] "m" Vector__XXX
  SG_ MachineSelectedSpeedExitReasonCo : 48|6@1+ (1,0) [0|63] "" Vector__XXX
  SG_ MachineSelectedSpeedSource : 54|3@1+ (1,0) [0|7] "" Vector__XXX
@@ -104,7 +104,7 @@ BO_ 2147548743 MaintainPower: 8 Vector__XXX
  SG_ MaintainPower_ImplementReadyToWo : 10|2@1+ (1,0) [0|3] "" Vector__XXX
 
 BO_ 2147548744 WheelBasedSpeedAndDistance: 8 Vector__XXX
- SG_ WheelBasedMachineSpeed : 0|16@1+ (0.001000000000000000020816681711721685132943093776702880859375,0) [0E-060|65.53500000000000136422123598] "m/s" Vector__XXX
+ SG_ WheelBasedMachineSpeed : 0|16@1+ (0.001,0) [0|65.535] "m/s" Vector__XXX
  SG_ WheelBasedMachineDistance : 16|32@1+ (1,0) [0|4294967295] "m" Vector__XXX
  SG_ MaximumTimeOfTractorPowerOk : 48|8@1+ (1,0) [0|255] "minutes" Vector__XXX
  SG_ OperatorDirectionReversed : 56|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -113,7 +113,7 @@ BO_ 2147548744 WheelBasedSpeedAndDistance: 8 Vector__XXX
  SG_ MachineDirection : 62|2@1+ (1,0) [0|3] "" Vector__XXX
 
 BO_ 2147548745 GroundBasedSpeedAndDistance: 8 Vector__XXX
- SG_ GroundBasedMachineSpeed : 0|16@1+ (0.001000000000000000020816681711721685132943093776702880859375,0) [0E-060|65.53500000000000136422123598] "m/s" Vector__XXX
+ SG_ GroundBasedMachineSpeed : 0|16@1+ (0.001,0) [0|65.535] "m/s" Vector__XXX
  SG_ GroundBasedMachineDistance : 16|32@1+ (1,0) [0|4294967295] "m" Vector__XXX
  SG_ MachineDirection : 62|2@1+ (1,0) [0|3] "" Vector__XXX
 
@@ -151,11 +151,11 @@ BO_ 2147548418 AllImplementsStopOperationsSwitc: 8 Vector__XXX
  SG_ AllImplementsStopOperationsSwitc : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
 BO_ 2147548902 TimeDate: 8 Vector__XXX
- SG_ Seconds : 0|8@1+ (0.25,0) [0.00|63.75] "s" Vector__XXX
+ SG_ Seconds : 0|8@1+ (0.25,0) [0|63.75] "s" Vector__XXX
  SG_ Minutes : 8|8@1+ (1,0) [0|255] "min" Vector__XXX
  SG_ Hours : 16|8@1+ (1,0) [0|255] "h" Vector__XXX
  SG_ Month : 24|8@1+ (1,0) [0|255] "month" Vector__XXX
- SG_ Day : 32|8@1+ (0.25,0) [0.00|63.75] "day" Vector__XXX
+ SG_ Day : 32|8@1+ (0.25,0) [0|63.75] "day" Vector__XXX
  SG_ Year : 40|8@1+ (1,1985) [1985|2240] "year" Vector__XXX
  SG_ LocalMinuteOffset : 48|8@1+ (1,-125) [-125|130] "min" Vector__XXX
  SG_ LocalHourOffset : 56|8@1+ (1,-125) [-125|130] "h" Vector__XXX

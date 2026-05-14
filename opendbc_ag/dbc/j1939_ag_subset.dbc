@@ -11,34 +11,34 @@ BU_:
 BO_ 2147545092 J1939_EEC1_ElectronicEngineContr: 8 Vector__XXX
  SG_ EngineTorqueMode : 0|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ ActualEngineTorquePct : 16|8@1+ (1,-125) [-125|130] "%" Vector__XXX
- SG_ EngineSpeed : 24|16@1+ (0.125,0) [0.000|8191.875] "rpm" Vector__XXX
+ SG_ EngineSpeed : 24|16@1+ (0.125,0) [0|8191.875] "rpm" Vector__XXX
  SG_ SourceAddressOfControllingDevice : 40|8@1+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 2147548914 J1939_LFE1_FuelEconomy: 8 Vector__XXX
- SG_ FuelRate : 0|16@1+ (0.05000000000000000277555756156289135105907917022705078125,0) [0E-056|3276.750000000000181896164797] "L/h" Vector__XXX
- SG_ InstantaneousFuelEconomy : 16|16@1+ (0.00195300000000000009182932192430826034978963434696197509765625,0) [0E-062|127.9898550000000060180346123] "km/L" Vector__XXX
- SG_ AverageFuelEconomy : 32|16@1+ (0.00195300000000000009182932192430826034978963434696197509765625,0) [0E-062|127.9898550000000060180346123] "km/L" Vector__XXX
- SG_ ThrottlePosition : 48|8@1+ (0.40000000000000002220446049250313080847263336181640625,0) [0E-053|102.0000000000000056621374256] "%" Vector__XXX
+ SG_ FuelRate : 0|16@1+ (0.05,0) [0|3276.75] "L/h" Vector__XXX
+ SG_ InstantaneousFuelEconomy : 16|16@1+ (0.001953,0) [0|127.989855] "km/L" Vector__XXX
+ SG_ AverageFuelEconomy : 32|16@1+ (0.001953,0) [0|127.989855] "km/L" Vector__XXX
+ SG_ ThrottlePosition : 48|8@1+ (0.4,0) [0|102] "%" Vector__XXX
 
 BO_ 2147548910 J1939_ET1_EngineTemperature1: 8 Vector__XXX
  SG_ EngineCoolantTemp : 0|8@1+ (1,-40) [-40|215] "°C" Vector__XXX
  SG_ FuelTemp : 8|8@1+ (1,-40) [-40|215] "°C" Vector__XXX
- SG_ EngineOilTemp1 : 16|16@1+ (0.03125,-273) [-273.00000|1774.96875] "°C" Vector__XXX
- SG_ TurboOilTemp : 32|16@1+ (0.03125,-273) [-273.00000|1774.96875] "°C" Vector__XXX
+ SG_ EngineOilTemp1 : 16|16@1+ (0.03125,-273) [-273|1774.96875] "°C" Vector__XXX
+ SG_ TurboOilTemp : 32|16@1+ (0.03125,-273) [-273|1774.96875] "°C" Vector__XXX
  SG_ EngineIntercoolerTemp : 48|8@1+ (1,-40) [-40|215] "°C" Vector__XXX
 
 BO_ 2147548911 J1939_EFLP1_EngineFluidLevelPres: 8 Vector__XXX
  SG_ FuelDeliveryPressure : 0|8@1+ (4,0) [0|1020] "kPa" Vector__XXX
- SG_ EngineOilLevel : 16|8@1+ (0.40000000000000002220446049250313080847263336181640625,0) [0E-053|102.0000000000000056621374256] "%" Vector__XXX
+ SG_ EngineOilLevel : 16|8@1+ (0.4,0) [0|102] "%" Vector__XXX
  SG_ EngineOilPressure : 24|8@1+ (4,0) [0|1020] "kPa" Vector__XXX
  SG_ CoolantPressure : 40|8@1+ (2,0) [0|510] "kPa" Vector__XXX
- SG_ CoolantLevel : 48|8@1+ (0.40000000000000002220446049250313080847263336181640625,0) [0E-053|102.0000000000000056621374256] "%" Vector__XXX
+ SG_ CoolantLevel : 48|8@1+ (0.4,0) [0|102] "%" Vector__XXX
 
 BO_ 2147548913 J1939_CCVS1_CruiseControlVehicle: 8 Vector__XXX
  SG_ TwoSpeedAxleSwitch : 0|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ ParkingBrakeSwitch : 2|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ CruiseControlPauseSwitch : 4|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ WheelBasedVehicleSpeed : 8|16@1+ (0.0039060000000000001836586438486165206995792686939239501953125,0) [0E-061|255.9797100000000120360692246] "km/h" Vector__XXX
+ SG_ WheelBasedVehicleSpeed : 8|16@1+ (0.003906,0) [0|255.97971] "km/h" Vector__XXX
  SG_ CruiseControlActive : 24|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ CruiseControlEnableSwitch : 26|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ BrakeSwitch : 28|2@1+ (1,0) [0|3] "" Vector__XXX
@@ -54,10 +54,10 @@ BO_ 2147548780 J1939_TCO1_TachographInformation: 8 Vector__XXX
  SG_ Driver1WorkingState : 0|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ Driver2WorkingState : 3|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ VehicleMotion : 6|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ TachographVehicleSpeed : 48|16@1+ (0.0039060000000000001836586438486165206995792686939239501953125,0) [0E-061|255.9797100000000120360692246] "km/h" Vector__XXX
+ SG_ TachographVehicleSpeed : 48|16@1+ (0.003906,0) [0|255.97971] "km/h" Vector__XXX
 
 BO_ 2147548901 J1939_HOURS_EngineHours: 8 Vector__XXX
- SG_ EngineTotalHoursOfOperation : 0|32@1+ (0.05000000000000000277555756156289135105907917022705078125,0) [0E-056|214748364.7500000119209289523] "h" Vector__XXX
+ SG_ EngineTotalHoursOfOperation : 0|32@1+ (0.05,0) [0|214748364.75] "h" Vector__XXX
  SG_ EngineTotalRevolutions : 32|32@1+ (1000,0) [0|4294967295000] "r" Vector__XXX
 
 BO_ 2147548908 J1939_VI_VehicleIdentification: 8 Vector__XXX
@@ -66,17 +66,17 @@ BO_ 2147548908 J1939_VI_VehicleIdentification: 8 Vector__XXX
 BO_ 2147548919 J1939_VEP1_VehicleElectricalPowe: 8 Vector__XXX
  SG_ NetBatteryCurrent : 0|8@1+ (1,-125) [-125|130] "A" Vector__XXX
  SG_ AlternatorCurrent : 8|8@1+ (1,0) [0|255] "A" Vector__XXX
- SG_ AlternatorPotential : 16|16@1+ (0.05000000000000000277555756156289135105907917022705078125,0) [0E-056|3276.750000000000181896164797] "V" Vector__XXX
- SG_ ElectricalPotential : 32|16@1+ (0.05000000000000000277555756156289135105907917022705078125,0) [0E-056|3276.750000000000181896164797] "V" Vector__XXX
- SG_ BatteryPotentialSwitched : 48|16@1+ (0.05000000000000000277555756156289135105907917022705078125,0) [0E-056|3276.750000000000181896164797] "V" Vector__XXX
+ SG_ AlternatorPotential : 16|16@1+ (0.05,0) [0|3276.75] "V" Vector__XXX
+ SG_ ElectricalPotential : 32|16@1+ (0.05,0) [0|3276.75] "V" Vector__XXX
+ SG_ BatteryPotentialSwitched : 48|16@1+ (0.05,0) [0|3276.75] "V" Vector__XXX
 
 BO_ 2147548540 J1939_DEF_DieselExhaustFluidConc: 8 Vector__XXX
- SG_ DEFTankLevel : 0|8@1+ (0.40000000000000002220446049250313080847263336181640625,0) [0E-053|102.0000000000000056621374256] "%" Vector__XXX
+ SG_ DEFTankLevel : 0|8@1+ (0.4,0) [0|102] "%" Vector__XXX
  SG_ DEFTankTemperature : 8|8@1+ (1,-40) [-40|215] "°C" Vector__XXX
 
 BO_ 2147548899 J1939_EC1_EngineConfiguration1: 8 Vector__XXX
- SG_ EngineSpeedAtIdle : 0|16@1+ (0.125,0) [0.000|8191.875] "rpm" Vector__XXX
- SG_ EngineSpeedAtMaxIdlePoint1 : 24|16@1+ (0.125,0) [0.000|8191.875] "rpm" Vector__XXX
+ SG_ EngineSpeedAtIdle : 0|16@1+ (0.125,0) [0|8191.875] "rpm" Vector__XXX
+ SG_ EngineSpeedAtMaxIdlePoint1 : 24|16@1+ (0.125,0) [0|8191.875] "rpm" Vector__XXX
 
 BO_ 2147548895 J1939_EEC3_ElectronicEngineContr: 8 Vector__XXX
  SG_ EngineDemandPercentTorque : 56|8@1+ (1,-125) [-125|130] "%" Vector__XXX
@@ -84,23 +84,23 @@ BO_ 2147548895 J1939_EEC3_ElectronicEngineContr: 8 Vector__XXX
 BO_ 2147545091 J1939_EEC2_ElectronicEngineContr: 8 Vector__XXX
  SG_ AcceleratorPedal1LowIdleSwitch : 0|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ AcceleratorPedalKickdownSwitch : 2|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ AcceleratorPedalPosition1 : 8|8@1+ (0.40000000000000002220446049250313080847263336181640625,0) [0E-053|102.0000000000000056621374256] "%" Vector__XXX
+ SG_ AcceleratorPedalPosition1 : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
  SG_ EnginePercentLoadAtCurrentSpeed : 16|8@1+ (1,0) [0|255] "%" Vector__XXX
 
 BO_ 2147548920 J1939_TRF1_TransmissionFluids1: 8 Vector__XXX
  SG_ ClutchPressure : 0|8@1+ (16,0) [0|4080] "kPa" Vector__XXX
- SG_ TransmissionOilLevel : 8|8@1+ (0.40000000000000002220446049250313080847263336181640625,0) [0E-053|102.0000000000000056621374256] "%" Vector__XXX
+ SG_ TransmissionOilLevel : 8|8@1+ (0.4,0) [0|102] "%" Vector__XXX
  SG_ TransmissionFilterDifferentialPr : 16|8@1+ (2,0) [0|510] "kPa" Vector__XXX
  SG_ TransmissionOilPressure : 24|8@1+ (16,0) [0|4080] "kPa" Vector__XXX
- SG_ TransmissionOilTemperature : 32|16@1+ (0.03125,-273) [-273.00000|1774.96875] "°C" Vector__XXX
+ SG_ TransmissionOilTemperature : 32|16@1+ (0.03125,-273) [-273|1774.96875] "°C" Vector__XXX
 
 BO_ 2147548918 J1939_IC1_InletExhaustConditions: 8 Vector__XXX
  SG_ ParticulateTrapInletPressure : 0|8@1+ (0.5,0) [0|127.5] "kPa" Vector__XXX
  SG_ BoostPressure : 8|8@1+ (2,0) [0|510] "kPa" Vector__XXX
  SG_ IntakeManifold1Temperature : 16|8@1+ (1,-40) [-40|215] "°C" Vector__XXX
  SG_ AirInletPressure : 24|8@1+ (2,0) [0|510] "kPa" Vector__XXX
- SG_ AirFilterDifferentialPressure : 32|8@1+ (0.05000000000000000277555756156289135105907917022705078125,0) [0E-056|12.75000000000000070776717820] "kPa" Vector__XXX
- SG_ ExhaustGasTemp : 40|16@1+ (0.03125,-273) [-273.00000|1774.96875] "°C" Vector__XXX
+ SG_ AirFilterDifferentialPressure : 32|8@1+ (0.05,0) [0|12.75] "kPa" Vector__XXX
+ SG_ ExhaustGasTemp : 40|16@1+ (0.03125,-273) [-273|1774.96875] "°C" Vector__XXX
  SG_ CoolantFilterDifferentialPressur : 56|8@1+ (0.5,0) [0|127.5] "kPa" Vector__XXX
 
 BO_ 2147548338 J1939_FFE_FuelEconomyExtended: 8 Vector__XXX
