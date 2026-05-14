@@ -212,7 +212,7 @@ CM_ BO_ 2147548743  "Source: AgIsoStack++ can_general_parameter_group_numbers.hp
 CM_ BO_ 2147548744  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:44";
 CM_ BO_ 2147548745  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:45";
 CM_ BO_ 2147548613  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:46";
-CM_ BO_ 2147548874  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:47";
+CM_ BO_ 2147548874  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:47 DM1 carries Active Diagnostic Trouble Codes per SAE J1939-73. Payload layout (multi-DTC, variable length): byte 0 = MIL/red-stop/amber-warning lamp status (2 bits each); bytes 1-3+ = repeating 4-byte DTC records (SPN 19-bit + FMI 5-bit + OC 7-bit + CM 1-bit). Per-DTC decoding is reader-side; this DBC documents only the frame-level definition. Full decode contribution welcome  see CONTRIBUTING.md.";
 CM_ BO_ 2147548875  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:48";
 CM_ BO_ 2147548876  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:49";
 CM_ BO_ 2147548883  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:50";
@@ -224,13 +224,13 @@ CM_ BO_ 2147548890  "Source: AgIsoStack++ can_general_parameter_group_numbers.hp
 CM_ BO_ 2147548418  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:56";
 CM_ BO_ 2147548902  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:57";
 CM_ BO_ 2147548907  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:58";
-CM_ BO_ 2147610898  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:59";
-CM_ BO_ 2147610899  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:60";
-CM_ BO_ 2147612673  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:61";
+CM_ BO_ 2147610898  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:59 Note: this is an NMEA 2000 marine PGN. AgIsoStack++ reuses these for GNSS/heading because NMEA 2000 and ISO 11783 share the J1939 protocol layer; they are not part of ISO 11783-7 itself.";
+CM_ BO_ 2147610899  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:60 Note: this is an NMEA 2000 marine PGN. AgIsoStack++ reuses these for GNSS/heading because NMEA 2000 and ISO 11783 share the J1939 protocol layer; they are not part of ISO 11783-7 itself.";
+CM_ BO_ 2147612673  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:61 Note: this is an NMEA 2000 marine PGN. AgIsoStack++ reuses these for GNSS/heading because NMEA 2000 and ISO 11783 share the J1939 protocol layer; they are not part of ISO 11783-7 itself.";
 CM_ BO_ 2147612674  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:62";
 CM_ BO_ 2147612675  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:63";
-CM_ BO_ 2147612677  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:64";
-CM_ BO_ 2147612692  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:65";
+CM_ BO_ 2147612677  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:64 Note: this is an NMEA 2000 marine PGN. AgIsoStack++ reuses these for GNSS/heading because NMEA 2000 and ISO 11783 share the J1939 protocol layer; they are not part of ISO 11783-7 itself.";
+CM_ BO_ 2147612692  "Source: AgIsoStack++ can_general_parameter_group_numbers.hpp:65 Note: this is an NMEA 2000 marine PGN. AgIsoStack++ reuses these for GNSS/heading because NMEA 2000 and ISO 11783 share the J1939 protocol layer; they are not part of ISO 11783-7 itself.";
 
 CM_ SG_ 2147527680 EstimatedCurvature "Source: isobus_guidance_interface.hpp GuidanceMachineInfo";
 CM_ SG_ 2147527680 MachineSteeringSystemCommandExit "Per ISO 11783-7 exit reason codes";
@@ -308,8 +308,10 @@ BA_ "SystemMessageLongSymbol" BO_ 2147548418 "AllImplementsStopOperationsSwitchS
 BA_ "SystemMessageLongSymbol" BO_ 2147612674 "CourseOverGroundSpeedOverGroundRapidUpdate";
 BA_ "SystemMessageLongSymbol" BO_ 2147612675 "PositionDeltaHighPrecisionRapidUpdate";
 
+BA_ "GenSigStartValue" SG_ 2147527680 EstimatedCurvature 32128;
 BA_ "SystemSignalLongSymbol" SG_ 2147527680 MachineSteeringSystemReadinessSt "MachineSteeringSystemReadinessState";
 BA_ "SystemSignalLongSymbol" SG_ 2147527680 MachineSteeringSystemCommandExit "MachineSteeringSystemCommandExitReasonCode";
+BA_ "GenSigStartValue" SG_ 2147527936 CurvatureCommand 32128;
 BA_ "SystemSignalLongSymbol" SG_ 2147534592 ExtendedTransportProtocolDataTra "ExtendedTransportProtocolDataTransfer_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147534848 ExtendedTransportProtocolConnect "ExtendedTransportProtocolConnectionManagement_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147535872 RequestForRepetitionRate_RawPayl "RequestForRepetitionRate_RawPayload";
@@ -325,6 +327,8 @@ BA_ "SystemSignalLongSymbol" SG_ 2147548743 MaintainPower_ImplementReadyToWo "Ma
 BA_ "SystemSignalLongSymbol" SG_ 2147548613 ECUIdentificationInformation_Raw "ECUIdentificationInformation_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548890 SoftwareIdentification_RawPayloa "SoftwareIdentification_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548418 AllImplementsStopOperationsSwitc "AllImplementsStopOperationsSwitchState_RawPayload";
+BA_ "GenSigStartValue" SG_ 2147548902 LocalMinuteOffset 125;
+BA_ "GenSigStartValue" SG_ 2147548902 LocalHourOffset 125;
 BA_ "SystemSignalLongSymbol" SG_ 2147548907 ComponentIdentification_RawPaylo "ComponentIdentification_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147612674 CourseOverGroundSpeedOverGroundR "CourseOverGroundSpeedOverGroundRapidUpdate_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147612675 PositionDeltaHighPrecisionRapidU "PositionDeltaHighPrecisionRapidUpdate_RawPayload";

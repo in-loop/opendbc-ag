@@ -6,7 +6,7 @@
   "total_scraped": 3212,
   "rejected_proprietary": 515,
   "deduplicated_against_agisostack": 63,
-  "final_unique": 2628,
+  "final_unique": 2627,
   "entries": [
     {
       "pgn": 256,
@@ -14449,12 +14449,6 @@
       "pgn_hex": "0xFEC0",
       "name": "Service Information",
       "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/16846?type=PGN"
-    },
-    {
-      "pgn": 65217,
-      "pgn_hex": "0xFEC1",
-      "name": "High Resolution Vehicle Distance",
-      "detail_url": "https://www.isobus.net/isobus/pGNAndSPN/16848?type=PGN"
     },
     {
       "pgn": 65218,

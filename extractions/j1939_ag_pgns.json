@@ -856,11 +856,11 @@
       ]
     },
     {
-      "pgn": 64777,
-      "pgn_hex": "0xFD09",
-      "pgn_decimal": 64777,
-      "name": "J1939_HRLD_HighResolutionTotalVehicleDistance",
-      "description": "High-resolution total vehicle distance",
+      "pgn": 65217,
+      "pgn_hex": "0xFEC1",
+      "pgn_decimal": 65217,
+      "name": "J1939_HRVD_HighResolutionVehicleDistance",
+      "description": "High-resolution vehicle distance (HRVD per SAE J1939-71)",
       "source": "Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)",
       "signals": [
         {

@@ -38,7 +38,7 @@ Lives inside the `openpilot/tools` repo. Browser-based viewer, optimized for rep
 ```sh
 git clone https://github.com/commaai/openpilot
 cd openpilot/tools/cabana
-# follow the README — uses bazel/cmake; depends on capnproto
+# follow the cabana README — current openpilot uses scons; depends on capnproto
 ```
 
 ### 1c. command-line baseline (always works)
@@ -50,8 +50,12 @@ cd openpilot/tools/cabana
 sudo apt install can-utils      # or: sudo dnf install can-utils
 
 # Bring up the interface (rates: 250000 for ISOBUS, 500000 for many chassis CAN)
-sudo ip link set can0 type can bitrate 250000
+# sample-point 0.875 + restart-ms 100 → ISOBUS-friendly defaults for long-cable harnesses
+sudo ip link set can0 type can bitrate 250000 sample-point 0.875 restart-ms 100
 sudo ip link set up can0
+
+# Note: some Linux drivers default to sample-point ~0.75, which causes intermittent
+# bus-off errors on ISOBUS. Setting 0.875 explicitly avoids this.
 
 # Watch live traffic
 candump can0
@@ -68,7 +72,7 @@ candump -L can0 > capture.log
 |---|---|---|---|---|
 | **PCAN-USB FD (PEAK)** | up to 5 Mbps FD | ✅ | external | Industry standard, well-supported by both Linux SocketCAN and Windows |
 | **Kvaser USBcan Pro 2xHS v2** | up to 5 Mbps FD | ✅ | external | Two channels — handy when you need tractor-side + implement-side simultaneously |
-| **Comma Panda (white/grey/red)** | up to 1 Mbps classic | classic only on older units | OBD-II native | Cheap, openpilot ecosystem; you'll typically adapt OBD-II → Deutsch DT-09 |
+| **Comma Panda (white/grey/red)** | up to 1 Mbps classic | classic only on older units | OBD-II native | Cheap, openpilot ecosystem. **Note:** OBD-II is uncommon on ag tractors; a custom OBD-II → 9-pin Deutsch adapter is required, and signal quality on long ag harnesses is marginal. |
 | **CANable Pro / CandleLight** | up to 1 Mbps classic | varies by firmware | external | Inexpensive, open hardware; check firmware for CAN-FD support |
 | **Macchina M2 / SuperB** | up to 1 Mbps classic | classic only | external | Arduino-friendly if you also want to inject |
 | **CAN-FD required for** | — | newer Hagie, some JD 9R variants, parts of CNH Magnum 5G upgrade | — | Confirm bus type before buying — wrong rate = no frames |
@@ -79,26 +83,27 @@ Rule of thumb: **buy CAN-FD-capable.** Classic CAN dongles cannot read CAN-FD bu
 
 ## 3. Generic ISOBUS connector reference (public spec)
 
-The standard implement-bus connector is a 9-pin Deutsch (DT04-9P on the tractor side, DT06-9S on the implement side). The pinout is published in many public sources — the project does not transcribe ISO 11783-2 directly.
+> ⚠️ **Verify before connecting.** Multiple ISOBUS connector classes exist in ISO 11783 (implement-bus, in-cab operator-station bus, tractor-ECU bus); pinouts differ between them. Even within the implement-bus class, some OEMs route key-switched vs unswitched power on different pins. **Probe with a multimeter before connecting any wire to ground or power.** The table below is the typical numbered-pin convention for the implement-bus 9-pin Deutsch (DT04-9P tractor-side / DT06-9S implement-side) as documented in AgIsoStack++ source and public ISOBUS summaries.
 
 | Pin | Function | Typical wire color |
 |---|---|---|
-| 1 | CAN_H (high) | yellow |
-| 2 | CAN_L (low) | green |
-| 3 | TBC_RTN — terminator bias return (signal ground reference) | brown |
+| 1 | ECU_PWR — battery-positive (unswitched) | red |
+| 2 | ECU_GND — battery ground | black |
+| 3 | TBC_DIS — terminator bias disconnect | — |
 | 4 | TBC_PWR — terminator bias circuit power | white |
-| 5 | TBC_SHIELD — shield ground for the twisted pair | bare |
-| 6 | ECU_GND — power ground | black |
-| 7 | ECU_PWR — battery-positive, unswitched | red |
-| 8 | ECU_PWR — battery-positive, key-switched | red |
-| 9 | ECU_GND — power ground | black |
+| 5 | TBC_RTN — terminator bias return (signal ground reference) | brown |
+| 6 | CAN_H (high) | yellow |
+| 7 | CAN_L (low) | green |
+| 8 | CAN_SHLD — CAN twisted-pair shield | bare |
+| 9 | TBC_SHLD — terminator bias circuit shield | — |
 
-Confirm against your machine's service literature before connecting power pins. **Probe with a multimeter first**; wire color is convention, not guarantee.
+Note that the related **J1939 chassis** 9-pin connector (HD10-9-1939) uses **letter** designations A–J rather than numbers, with a different pin-to-function mapping. Do not assume the chassis-bus pinout matches the implement-bus pinout — they don't.
 
 Source citations:
 - AgIsoStack++ documentation and source comments (`Open-Agriculture/AgIsoStack-plus-plus`)
 - Wikipedia: [ISOBUS](https://en.wikipedia.org/wiki/ISO_11783) connector summary
 - VDMA public PGN reference at [isobus.net](https://www.isobus.net/)
+- Deutsch DT-09 connector datasheet (publicly available from TE Connectivity)
 
 If you have access to the paid ISO 11783-2 PDF, **do not paste its text into this repository**. Cite the standard's section number and use only summary-level information.
 
@@ -108,7 +113,7 @@ If you have access to the paid ISO 11783-2 PDF, **do not paste its text into thi
 
 ### 4a. Wire it up
 
-1. **Identify the bus first.** Most modern ag tractors have *several*: a chassis/J1939 bus (500 kbps), the ISOBUS implement bus (250 kbps), one or more body / comfort buses, and increasingly CAN-FD on newer hydraulic / steering systems. The wrong bus + wrong bitrate looks like silence.
+1. **Identify the bus first.** Most modern ag tractors have *several*: a chassis/J1939 bus (500 kbps), the ISOBUS implement bus (250 kbps), one or more body / comfort buses, and increasingly CAN-FD on newer hydraulic / steering systems. The wrong bus + wrong bitrate looks like silence. **Edge cases:** 125 kbps occasionally appears on pre-2003 J1939 chassis (legacy combine engines); AEF "High-Speed ISOBUS" (HSI) uses CAN-FD at 500 kbps arbitration / 2 Mbps data on equipment that supports it.
 2. **Terminate correctly.** ISOBUS is 120 Ω termination at each physical end. **Do not** add a third terminator with your dongle if the bus already has two — you will load the bus and cause arbitration errors. Most dongles let you disable internal termination via DIP switch or config.
 3. **Use the diagnostic / implement bus connector when you can.** It's a passive tap. Splicing into harness wiring should be your last resort.
 
@@ -134,9 +139,9 @@ Run-of-the-day captures are more useful than synthetic test loops. Plan a captur
 | Hydraulics | lift / lower three-point | Aux valve commands, hitch position |
 | PTO | engage / disengage | PTO output engagement, PTO speed |
 | Steering | left lock → straight → right lock | Curvature command, machine info |
-| Implement | hook up a known ISOBUS implement, run its standard sequence | Address claim (PGN 0xEE00), TIM, working set master |
+| Implement | hook up a known ISOBUS implement, then power-cycle to capture the address-claim sequence | Address claim (PGN 0xEE00) is observed automatically on bus init, not stimulus-driven; TIM, working set master |
 
-Save each capture with a descriptive filename: `combine_threshing_jd9870_2026-04-12.log`.
+Save each capture with a descriptive filename including machine class, operation, and date (e.g. `combine_threshing_2026-04-12.log`).
 
 ---
 

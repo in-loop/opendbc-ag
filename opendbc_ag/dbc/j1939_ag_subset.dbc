@@ -107,7 +107,7 @@ BO_ 2147548338 J1939_FFE_FuelEconomyExtended: 8 Vector__XXX
  SG_ EngineTripFuel : 0|32@1+ (0.5,0) [0|2147483647.5] "L" Vector__XXX
  SG_ EngineTotalFuelUsed : 32|32@1+ (0.5,0) [0|2147483647.5] "L" Vector__XXX
 
-BO_ 2147548425 J1939_HRLD_HighResolutionTotalVe: 8 Vector__XXX
+BO_ 2147548865 J1939_HRVD_HighResolutionVehicle: 8 Vector__XXX
  SG_ HighResolutionTotalVehicleDistan : 0|32@1+ (5,0) [0|21474836475] "m" Vector__XXX
  SG_ HighResolutionTripDistance : 32|32@1+ (5,0) [0|21474836475] "m" Vector__XXX
 
@@ -128,7 +128,7 @@ CM_ BO_ 2147545091  "Accelerator pedal + percent load. Source: Wikipedia SAE J19
 CM_ BO_ 2147548920  "Transmission oil + clutch pressure. Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
 CM_ BO_ 2147548918  "Boost + intake air temp + air filter differential pressure. Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
 CM_ BO_ 2147548338  "Trip fuel + total fuel + trip distance. Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
-CM_ BO_ 2147548425  "High-resolution total vehicle distance. Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
+CM_ BO_ 2147548865  "High-resolution vehicle distance (HRVD per SAE J1939-71). Source: Wikipedia SAE J1939 PGN list (en.wikipedia.org/wiki/SAE_J1939)";
 
 CM_ SG_ 2147545092 ActualEngineTorquePct "Actual engine percent torque";
 CM_ SG_ 2147545092 SourceAddressOfControllingDevice "Source address of the device commanding engine torque";
@@ -148,10 +148,10 @@ BA_ "SystemMessageLongSymbol" BO_ 2147548540 "J1939_DEF_DieselExhaustFluidConcen
 BA_ "SystemMessageLongSymbol" BO_ 2147548895 "J1939_EEC3_ElectronicEngineController3";
 BA_ "SystemMessageLongSymbol" BO_ 2147545091 "J1939_EEC2_ElectronicEngineController2";
 BA_ "SystemMessageLongSymbol" BO_ 2147548918 "J1939_IC1_InletExhaustConditions1";
-BA_ "SystemMessageLongSymbol" BO_ 2147548425 "J1939_HRLD_HighResolutionTotalVehicleDistance";
+BA_ "SystemMessageLongSymbol" BO_ 2147548865 "J1939_HRVD_HighResolutionVehicleDistance";
 
 BA_ "SystemSignalLongSymbol" SG_ 2147548920 TransmissionFilterDifferentialPr "TransmissionFilterDifferentialPressure";
 BA_ "SystemSignalLongSymbol" SG_ 2147548918 CoolantFilterDifferentialPressur "CoolantFilterDifferentialPressure";
-BA_ "SystemSignalLongSymbol" SG_ 2147548425 HighResolutionTotalVehicleDistan "HighResolutionTotalVehicleDistance";
+BA_ "SystemSignalLongSymbol" SG_ 2147548865 HighResolutionTotalVehicleDistan "HighResolutionTotalVehicleDistance";
 
 VAL_ 2147545092 EngineTorqueMode 0 "LowIdleGovernor" 1 "AcceleratorPedal" 2 "CruiseControl" 3 "PTOGovernor" 4 "RoadSpeedGovernor" 5 "ASRControl" 6 "TransmissionControl" 7 "ABSControl" 8 "TorqueLimiting" 9 "HighSpeedGovernor" 10 "BrakingSystem" 11 "RemoteAccelerator" 14 "Other" 15 "NotAvailable";

@@ -7229,9 +7229,6 @@ BO_ 2147548863 VDMA_FEBF_Wheel_Speed_Informatio: 8 Vector__XXX
 BO_ 2147548864 VDMA_FEC0_Service_Information: 8 Vector__XXX
  SG_ Service_Information_RawPayload : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
-BO_ 2147548865 VDMA_FEC1_High_Resolution_Vehicl: 8 Vector__XXX
- SG_ High_Resolution_Vehicle_Distance : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
-
 BO_ 2147548866 VDMA_FEC2_Electronic_Retarder_Co: 8 Vector__XXX
  SG_ Electronic_Retarder_Controller_2 : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
@@ -10300,7 +10297,6 @@ CM_ BO_ 2147548861  "Source: isobus.net VDMA Data Dictionary (https://www.isobus
 CM_ BO_ 2147548862  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16833?type=PGN)";
 CM_ BO_ 2147548863  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16840?type=PGN)";
 CM_ BO_ 2147548864  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16846?type=PGN)";
-CM_ BO_ 2147548865  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16848?type=PGN)";
 CM_ BO_ 2147548866  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16856?type=PGN)";
 CM_ BO_ 2147548867  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16862?type=PGN)";
 CM_ BO_ 2147548868  "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/isobus/pGNAndSPN/16863?type=PGN)";
@@ -12929,7 +12925,6 @@ CM_ SG_ 2147548861 Fan_Drive_1_RawPayload "Generic 8-byte raw payload. Detail pa
 CM_ SG_ 2147548862 Electronic_Engine_Controller_4_R "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16833?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548863 Wheel_Speed_Information_RawPaylo "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16840?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548864 Service_Information_RawPayload "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16846?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
-CM_ SG_ 2147548865 High_Resolution_Vehicle_Distance "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16848?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548866 Electronic_Retarder_Controller_2 "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16856?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548867 Electronic_Transmission_Controll "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16862?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
 CM_ SG_ 2147548868 Electronic_Brake_System_2_2_RawP "Generic 8-byte raw payload. Detail page: https://www.isobus.net/isobus/pGNAndSPN/16863?type=PGN. Signal-level enrichment via PR welcome  see CONTRIBUTING.md.";
@@ -15300,7 +15295,6 @@ BA_ "SystemMessageLongSymbol" BO_ 2147548858 "VDMA_FEBA_Trip_Distance_Informatio
 BA_ "SystemMessageLongSymbol" BO_ 2147548860 "VDMA_FEBC_Compression_Service_Brake_Inform";
 BA_ "SystemMessageLongSymbol" BO_ 2147548862 "VDMA_FEBE_Electronic_Engine_Controller_4";
 BA_ "SystemMessageLongSymbol" BO_ 2147548863 "VDMA_FEBF_Wheel_Speed_Information";
-BA_ "SystemMessageLongSymbol" BO_ 2147548865 "VDMA_FEC1_High_Resolution_Vehicle_Distance";
 BA_ "SystemMessageLongSymbol" BO_ 2147548866 "VDMA_FEC2_Electronic_Retarder_Controller_2";
 BA_ "SystemMessageLongSymbol" BO_ 2147548867 "VDMA_FEC3_Electronic_Transmission_Controll";
 BA_ "SystemMessageLongSymbol" BO_ 2147548868 "VDMA_FEC4_Electronic_Brake_System_2_2";
@@ -17629,7 +17623,6 @@ BA_ "SystemSignalLongSymbol" SG_ 2147548858 Trip_Distance_Information_RawPay "Tr
 BA_ "SystemSignalLongSymbol" SG_ 2147548860 Compression_Service_Brake_Inform "Compression_Service_Brake_Inform_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548862 Electronic_Engine_Controller_4_R "Electronic_Engine_Controller_4_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548863 Wheel_Speed_Information_RawPaylo "Wheel_Speed_Information_RawPayload";
-BA_ "SystemSignalLongSymbol" SG_ 2147548865 High_Resolution_Vehicle_Distance "High_Resolution_Vehicle_Distance_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548866 Electronic_Retarder_Controller_2 "Electronic_Retarder_Controller_2_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548867 Electronic_Transmission_Controll "Electronic_Transmission_Controll_RawPayload";
 BA_ "SystemSignalLongSymbol" SG_ 2147548868 Electronic_Brake_System_2_2_RawP "Electronic_Brake_System_2_2_RawPayload";

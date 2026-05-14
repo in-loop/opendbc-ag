@@ -85,3 +85,7 @@ CM_ BO_ 256 "Source: isobus.net VDMA Data Dictionary (https://www.isobus.net/iso
 ## When in doubt
 
 Match the style of an existing similar signal in `iso11783_from_agisostack.dbc` (most carefully-curated DBC in the corpus) or `j1939_ag_subset.dbc` (hand-curated J1939). If still unsure, ask in a discussion / draft PR before completing.
+
+## Note on case convention
+
+CSS Electronics, Vector, and many other commercial DBC ecosystems prefer **snake_case** signal names (`Wheel_Based_Vehicle_Speed`) rather than CamelCase (`WheelBasedVehicleSpeed`). The CamelCase choice here mirrors AgIsoStack++ C++ enum style, which is our primary upstream PGN source. Translation between the two conventions is a mechanical 1-line change — if a downstream consumer needs the snake_case form, opening a PR with a side-by-side `dbc/iso11783_from_agisostack_snakecase.dbc` is welcome.

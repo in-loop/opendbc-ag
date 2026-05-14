@@ -309,9 +309,9 @@ PGN_DEFINITIONS: list[P] = [
         ],
     ),
     P(
-        pgn=0xFD09,  # 64777
-        name="J1939_HRLD_HighResolutionTotalVehicleDistance",
-        description="High-resolution total vehicle distance",
+        pgn=0xFEC1,  # 65217 — corrected from 0xFD09 (R2 domain fix)
+        name="J1939_HRVD_HighResolutionVehicleDistance",
+        description="High-resolution vehicle distance (HRVD per SAE J1939-71)",
         source=WIKIPEDIA_J1939,
         signals=[
             Sig(name="HighResolutionTotalVehicleDistance", start_bit=0, length=32,
