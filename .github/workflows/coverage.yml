@@ -8,6 +8,10 @@ on:
       - "opendbc_ag/tools/coverage_report.py"
   workflow_dispatch:
 
+concurrency:
+  group: coverage-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   regenerate:
     runs-on: ubuntu-latest
@@ -37,7 +41,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if [ -n "$(git status --porcelain docs/coverage.md)" ]; then
             git add docs/coverage.md
-            git commit -m "docs(coverage): auto-regenerate coverage matrix"
+            git commit -m "docs(coverage): auto-regenerate coverage matrix [skip ci]"
             git push
           else
             echo "No coverage changes."

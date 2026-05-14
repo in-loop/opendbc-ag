@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: consistency-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   scope-policy:
     runs-on: ubuntu-latest
@@ -22,47 +26,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
 
-      - name: Enforce pure-standard scope policy (DP0+DP1 proprietary + name patterns)
-        run: |
-          python -c "
-          from pathlib import Path
-          from canmatrix import formats
-          from opendbc_ag.tools._scope_policy import is_in_scope, reject_reason
-          violations = []
-          for dbc in Path('opendbc_ag/dbc').glob('*.dbc'):
-              m = formats.loadp(str(dbc))
-              mat = list(m.values())[0]
-              for frame in mat.frames:
-                  pgn = frame.arbitration_id.id
-                  if not is_in_scope(pgn, frame.name):
-                      violations.append(f'{dbc.name}: {frame.name} (PGN 0x{pgn:X}) — {reject_reason(pgn, frame.name)}')
-          if violations:
-              print(f'CI FAIL: {len(violations)} out-of-scope frame(s) found in DBC corpus:')
-              for v in violations[:30]:
-                  print(f'  {v}')
-              if len(violations) > 30:
-                  print(f'  ... and {len(violations) - 30} more')
-              raise SystemExit(1)
-          print('OK: no out-of-scope frames in DBC corpus.')
-          "
-
-      - name: Detect cross-DBC duplicate PGN IDs
-        run: |
-          python -c "
-          from collections import defaultdict
-          from pathlib import Path
-          from canmatrix import formats
-          seen = defaultdict(list)
-          for dbc in sorted(Path('opendbc_ag/dbc').glob('*.dbc')):
-              m = formats.loadp(str(dbc))
-              mat = list(m.values())[0]
-              for frame in mat.frames:
-                  seen[frame.arbitration_id.id].append((dbc.name, frame.name))
-          dupes = {pgn: locs for pgn, locs in seen.items() if len(locs) > 1}
-          if dupes:
-              print('CI WARN: duplicate PGN IDs across DBC files (expected zero):')
-              for pgn, locs in sorted(dupes.items()):
-                  print(f'  0x{pgn:X}: {locs}')
-              raise SystemExit(1)
-          print(f'OK: {sum(len(v) for v in seen.values())} frames across {len(seen)} unique PGN IDs — no duplicates.')
-          "
+      - name: Run scope-policy + duplicate + citation checks
+        run: python scripts/check_dbc_policy.py
