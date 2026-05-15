@@ -53,3 +53,5 @@ RALPH_STATUS.md.tmp
 !extractions/
 !extractions/**/*.json
 !extractions/**/*.csv
+.venv-preflight/
+preflight-report.md

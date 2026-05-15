@@ -363,14 +363,21 @@ def _clean_numeric_tokens(dbc_path: Path) -> None:
 
 
 def _set_baudrate(dbc_path: Path, baudrate: int) -> None:
-    """Inject `BS_: <baudrate>` into a canmatrix-emitted DBC.
+    """No-op preserved for API compatibility.
 
-    canmatrix's header writer hardcodes `BS_:` empty. Post-process to set the value.
+    DBC's `BS_:` line is hardcoded empty by canmatrix; cantools (the canonical
+    parser used by openpilot/cabana/AgOpenGPS) only accepts the empty form
+    (`BS_:` with nothing after the colon). Baudrate is conventionally encoded
+    via the `BA_ "Baudrate"` attribute, not BS_. For opendbc-ag, baudrate is
+    documented in README + docs/coverage.md per DBC rather than embedded in
+    the file itself, since the three DBCs each target a known bus speed
+    (250 kbps for ISOBUS, 500 kbps for J1939 chassis).
+
+    Kept as a function so callers from extract_*.py continue to work without
+    refactoring; behavior is intentionally no-op.
     """
-    text = dbc_path.read_text(encoding="utf-8")
-    if "BS_:" not in text:
-        raise ValueError(f"{dbc_path}: no BS_ line found")
-    dbc_path.write_text(text.replace("BS_:\n", f"BS_: {baudrate}\n", 1), encoding="utf-8")
+    _ = baudrate
+    _ = dbc_path  # unused
 
 
 def main() -> int:
