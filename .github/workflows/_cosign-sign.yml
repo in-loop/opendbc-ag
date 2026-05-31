@@ -1,0 +1,59 @@
+# Reusable workflow: sign every release artifact with cosign keyless
+# (OIDC via GitHub Actions). No long-lived signing key. Decision 12.
+#
+# Verification by downstream:
+#   cosign verify-blob \
+#     --certificate-identity-regexp '^https://github.com/<owner>/<repo>/' \
+#     --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+#     --bundle <artifact>.bundle \
+#     <artifact>
+
+name: _cosign-sign
+
+on:
+  workflow_call: {}
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  sign:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29  # v4.1.7
+        with:
+          persist-credentials: false
+
+      - name: Download release artifacts
+        uses: actions/download-artifact@0000000000000000000000000000000000000000  # v4.1.8 PIN-ME
+        with:
+          name: release-artifacts
+          path: out/
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@0000000000000000000000000000000000000000  # v3.7.0 PIN-ME
+
+      - name: Sign each artifact (keyless OIDC bundle)
+        run: |
+          set -euo pipefail
+          mkdir -p signed/
+          cd out
+          for f in *; do
+              [[ -f "$f" ]] || continue
+              echo "[sign] $f"
+              cosign sign-blob \
+                  --yes \
+                  --bundle "../signed/${f}.bundle" \
+                  "$f"
+              cp "$f" "../signed/$f"
+          done
+          ls -la ../signed/
+
+      - name: Upload signatures
+        uses: actions/upload-artifact@0000000000000000000000000000000000000000  # v4.4.3 PIN-ME
+        with:
+          name: cosign-signatures
+          path: signed/
+          retention-days: 90

@@ -1,6 +1,6 @@
 # Contributing to opendbc-ag
 
-opendbc-ag is the OSS canonical ag-CAN DBC repository. Contributions are welcome — this guide tells you what fits in scope and how to submit.
+opendbc-ag is an OSS ag-CAN DBC repository. Contributions are welcome — this guide tells you what fits in scope and how to submit.
 
 ## Scope policy
 

@@ -134,7 +134,7 @@ All dependencies are pinned at floor versions in `pyproject.toml`. No GPL/AGPL r
 ## What's not here
 
 - **Reference CAN trace corpus** in `corpus/` is currently a placeholder directory. Trace capture requires hardware deployment and field operations — it lives outside the scope of the initial build and will be populated as captures accumulate.
-- **Field-specific pinouts** (JD 9R, Kinze 3700, Hagie STS, Brent V-Series TRAX, JD S/X combine) are flagged `<TODO>` in `docs/cabana-for-ag-setup.md` §7 — to be filled in after first-hand capture.
+- **Field-specific pinouts** (5 equipment classes: 4WD tractor, planter, sprayer, auger wagon, combine) are flagged `<TODO>` in `docs/cabana-for-ag-setup.md` §7 — to be filled in after first-hand capture.
 - **Partnership cross-links** (AgOpenGPS, Open-Agriculture, Tractor Hacking, ISOBlue HD) happen at public release time, not before.
 
 ---

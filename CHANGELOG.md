@@ -19,9 +19,9 @@ All notable changes to opendbc-ag are documented here. Format follows [Keep a Ch
 
 ### Acceptance criteria (PRD)
 - Repo visibility = PRIVATE — ✅
-- `pytest opendbc_ag/tests/` passes — ✅ (29/29)
+- `pytest opendbc_ag/tests/` passes — ✅ (76 passed, 2 xfailed; was 29/29 at v0.0.1, grown by the R-series remediation)
 - `canmatrix --check opendbc_ag/dbc/*.dbc` returns 0 errors — ✅
-- Corpus ≥ 80 PGNs — ✅ (2,955 unique PGNs / 3,045 signals)
+- Corpus ≥ 80 PGNs — ✅ (2,690 unique PGNs / 2,780 signals, after Phase R1 proprietary-range filtering)
 - CI workflows green on `main` — ✅
 - `RALPH_REPORT.md` enumerates user TODOs — ✅
 - No PGN in proprietary range — ✅ (CI-enforced)

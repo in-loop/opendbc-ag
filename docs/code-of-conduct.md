@@ -24,7 +24,7 @@ It does **not** govern unrelated personal speech in private spaces, or behavior 
 
 ### 2. How to report
 
-To report a concern under the Covenant, email **`ctyoungb.agent@gmail.com`**.
+To report a concern under the Covenant, email **`ctyoungb.agent@gmail.com`** (a dedicated, monitored disclosure inbox).
 
 You can include as much or as little detail as you choose. Reporters may use a pseudonymous email; reports will be read by the maintainer named below. We will acknowledge receipt within seven days.
 
@@ -33,6 +33,8 @@ You can include as much or as little detail as you choose. Reporters may use a p
 ### 3. Conflict of interest (best-effort, single-maintainer project)
 
 This is a single-maintainer project. If a report concerns the maintainer themself, or someone the maintainer has a close personal or professional tie to, the maintainer will recuse from the decision and ask an external reviewer to handle the report. A standing external reviewer-of-record has not yet been named; if a conflict situation arises before one is, the maintainer will publicly name a reviewer at decision time and document the choice. This is an acknowledged gap of the current single-maintainer phase — expect this section to tighten as the project grows.
+
+**Pre-public-release action:** name a standing external reviewer-of-record in this section before, or shortly after, public release. **Interim measure** (until one is named): a conflict report naming the maintainer is handed to a neutral external reviewer chosen at decision time, the escalation is completed within 14 days, and the choice is documented in the report thread.
 
 ### 4. Appeals
 

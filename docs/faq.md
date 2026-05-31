@@ -6,7 +6,7 @@ A repository of DBC files describing agricultural CAN bus traffic — primarily 
 
 ## Why does this project exist?
 
-There is no widely-shared canonical DBC corpus for ag-CAN content the way [opendbc](https://github.com/commaai/opendbc) is for automotive. Individual researchers, fleet integrators, AgOpenGPS contributors, and academic projects (ISOBlue at Purdue) each maintain partial sets. This project is an attempt at a shared, MIT-licensed, OSS-canonical baseline that anyone can build on. See `docs/legal-context.md` for the scope-policy rationale.
+There is no widely-shared canonical DBC corpus for ag-CAN content the way [opendbc](https://github.com/commaai/opendbc) is for automotive. Individual researchers, fleet integrators, AgOpenGPS contributors, and academic projects (ISOBlue at Purdue) each maintain partial sets. This project is an attempt at a shared, MIT-licensed, open baseline that anyone can build on. See `docs/legal-context.md` for the scope-policy rationale.
 
 ## Is this affiliated with comma.ai, opendbc, AgIsoStack, AgOpenGPS, or any OEM?
 
@@ -42,7 +42,7 @@ Yes, for the ISOBUS implement bus (250 kbps classic CAN) and most J1939 chassis 
 
 ## Will there be a public release?
 
-The repository is currently private (`v0.1.0-private`) for maintainer review. Going public is a separate, explicit decision after that review pass — not auto-triggered. If/when public, partnerships and announcements happen from the maintainer's account.
+opendbc-ag is publicly available; this repository is the canonical source. Partnerships and announcements happen from the maintainer's account.
 
 ## How do I cite this project?
 

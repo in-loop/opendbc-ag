@@ -1,0 +1,123 @@
+# Tier 2 release pipeline (Decision 12: sign every release; SLSA + SBOM
+# at Tier 2). Triggered by tag push from `just release {patch|minor|major}`.
+
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+      - "[0-9][0-9][0-9][0-9].[0-9]*.[0-9]*"   # CalVer (apps)
+
+permissions:
+  contents: write   # for creating GitHub releases
+  id-token: write   # for cosign keyless OIDC + SLSA
+  attestations: write
+
+jobs:
+  build:
+    name: build artifacts
+    runs-on: ubuntu-24.04
+    outputs:
+      artifact-digests: ${{ steps.digests.outputs.digests }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29  # v4.1.7
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Build (delegated to language toolchain)
+        run: just build
+
+      - name: Stage artifacts
+        id: stage
+        run: |
+          mkdir -p out/
+          # Repos override this step in a pre-release hook if their
+          # build outputs aren't directly under target/release/, dist/,
+          # or build/.
+          shopt -s nullglob
+          for path in target/release/*-* dist/* build/* *.tar.gz *.zip; do
+              [[ -f "$path" ]] && cp "$path" out/
+          done
+          ls -la out/
+
+      - name: Compute digests
+        id: digests
+        run: |
+          cd out
+          digests=$(sha256sum * | base64 -w0)
+          echo "digests=$digests" >> "$GITHUB_OUTPUT"
+          sha256sum * > SHA256SUMS
+
+      - name: Upload artifact bundle
+        uses: actions/upload-artifact@0000000000000000000000000000000000000000  # v4.4.3 PIN-ME
+        with:
+          name: release-artifacts
+          path: out/
+          retention-days: 7
+
+  sbom:
+    name: sbom
+    needs: build
+    uses: ./.github/workflows/_sbom.yml
+    with:
+      artifact-name: release-artifacts
+    permissions:
+      contents: read
+      id-token: write
+
+  slsa:
+    name: slsa-provenance
+    needs: build
+    uses: ./.github/workflows/_slsa.yml
+    with:
+      artifact-digests: ${{ needs.build.outputs.artifact-digests }}
+    permissions:
+      id-token: write
+      contents: write
+      actions: read
+
+  sign:
+    name: cosign sign
+    needs: [build, sbom, slsa]
+    uses: ./.github/workflows/_cosign-sign.yml
+    permissions:
+      id-token: write
+      contents: write
+
+  publish:
+    name: publish github release
+    needs: [build, sbom, slsa, sign]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29  # v4.1.7
+        with:
+          persist-credentials: false
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@0000000000000000000000000000000000000000  # v4.1.8 PIN-ME
+        with:
+          path: gh-release/
+
+      - name: Generate changelog with git-cliff
+        uses: orhun/git-cliff-action@0000000000000000000000000000000000000000  # v4.4.2 PIN-ME
+        with:
+          config: cliff.toml
+          args: --latest --strip header
+        env:
+          OUTPUT: CHANGES.md
+
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@0000000000000000000000000000000000000000  # v2.2.1 PIN-ME
+        with:
+          body_path: CHANGES.md
+          files: |
+            gh-release/**/*
+          generate_release_notes: false
+          draft: false
+          prerelease: false

@@ -13,7 +13,7 @@ What we **do** treat as security-relevant:
 If you believe a published signal definition in this repository is wrong in a way that could cause harm if followed:
 
 1. Open a GitHub issue tagged `safety`.
-2. **Also** email `ctyoungb.agent@gmail.com` so the disclosure has an out-of-band record.
+2. **Also** email `ctyoungb.agent@gmail.com` (a dedicated, monitored disclosure inbox) so the disclosure has an out-of-band record.
 
 We aim to acknowledge receipt within seven days. The longer disclosure framing — including responsibility expectations and project-vs-legal scope — lives in [`docs/code-of-conduct.md`](docs/code-of-conduct.md) §7.
 

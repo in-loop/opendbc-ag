@@ -1,0 +1,49 @@
+# Reusable workflow: generate SBOM (SPDX + CycloneDX) with syft.
+# Called from release.yml (Decision 12: SBOM at Tier 2).
+
+name: _sbom
+
+on:
+  workflow_call:
+    inputs:
+      artifact-name:
+        description: Name of the artifact to scan
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  sbom:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29  # v4.1.7
+        with:
+          persist-credentials: false
+
+      - name: Download release artifacts
+        uses: actions/download-artifact@0000000000000000000000000000000000000000  # v4.1.8 PIN-ME
+        with:
+          name: ${{ inputs.artifact-name }}
+          path: artifacts/
+
+      - name: Install syft
+        uses: anchore/sbom-action/download-syft@0000000000000000000000000000000000000000  # v0.17.7 PIN-ME
+
+      - name: Generate SPDX SBOM
+        run: syft scan dir:. -o spdx-json=sbom.spdx.json
+
+      - name: Generate CycloneDX SBOM
+        run: syft scan dir:. -o cyclonedx-json=sbom.cdx.json
+
+      - name: Upload SBOMs
+        uses: actions/upload-artifact@0000000000000000000000000000000000000000  # v4.4.3 PIN-ME
+        with:
+          name: sbom
+          path: |
+            sbom.spdx.json
+            sbom.cdx.json
+          retention-days: 90

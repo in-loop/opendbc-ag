@@ -1,0 +1,12 @@
+# CODEOWNERS — auto-assigns review when paths change.
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# Order matters: later patterns win. Tighten the matches as the project
+# grows and contributors specialise. For a solo project, the catch-all
+# is enough.
+
+* @in-loop
+
+# Security-sensitive paths get an extra reviewer when collaborators arrive.
+# /SECURITY.md @in-loop
+# /.github/workflows/ @in-loop

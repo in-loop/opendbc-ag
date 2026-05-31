@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "opendbc-ag"
 version = "0.1.0"
-description = "OSS canonical agricultural-CAN DBC repository — ISO 11783 + J1939 ag subset, MIT, pure-standard."
+description = "OSS agricultural-CAN DBC repository — ISO 11783 + J1939 ag subset, MIT, pure-standard."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }

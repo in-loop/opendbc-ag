@@ -1,0 +1,35 @@
+# Reusable workflow: generate SLSA provenance (Build Level 3) for the
+# release artifacts. Called from release.yml (Decision 12).
+#
+# Uses the official slsa-framework generic generator. The generator
+# itself enforces the SLSA Build L3 requirements (isolated builder,
+# unforgeable provenance, etc.) — we just hand it the digests.
+
+name: _slsa
+
+on:
+  workflow_call:
+    inputs:
+      artifact-digests:
+        description: Base64-encoded SHA256SUMS-formatted digest list
+        required: true
+        type: string
+
+permissions:
+  id-token: write
+  contents: write
+  actions: read
+
+jobs:
+  provenance:
+    permissions:
+      id-token: write
+      contents: write
+      actions: read
+    # The reusable workflow MUST be referenced by tag (not SHA) per the
+    # SLSA generator's documentation; it verifies its own integrity.
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.0.0
+    with:
+      base64-subjects: ${{ inputs.artifact-digests }}
+      provenance-name: provenance.intoto.jsonl
+      upload-assets: true
