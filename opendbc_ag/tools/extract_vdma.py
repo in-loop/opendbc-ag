@@ -35,7 +35,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-USER_AGENT = "opendbc-ag-bot/0.1 (+https://github.com/in-loop/opendbc-ag; pure-standard ISO 11783 DBC corpus)"
+USER_AGENT = "opendbc-ag-bot/0.1 (+https://github.com/chris-youngblut-solutions/opendbc-ag; pure-standard ISO 11783 DBC corpus)"
 REQUEST_DELAY_SEC = 2.0
 LIST_URL = "https://www.isobus.net/isobus/pGNAndSPN/index"
 

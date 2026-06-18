@@ -5,8 +5,8 @@
 # grows and contributors specialise. For a solo project, the catch-all
 # is enough.
 
-* @in-loop
+* @chris-youngblut-solutions
 
 # Security-sensitive paths get an extra reviewer when collaborators arrive.
-# /SECURITY.md @in-loop
-# /.github/workflows/ @in-loop
+# /SECURITY.md @chris-youngblut-solutions
+# /.github/workflows/ @chris-youngblut-solutions

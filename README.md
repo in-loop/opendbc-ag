@@ -26,7 +26,7 @@ Live coverage matrix at [`docs/coverage.md`](docs/coverage.md) (auto-regenerated
 ## Quickstart
 
 ```bash
-git clone https://github.com/in-loop/opendbc-ag.git
+git clone https://github.com/chris-youngblut-solutions/opendbc-ag.git
 cd opendbc-ag
 
 # Linux / macOS

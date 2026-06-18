@@ -32,7 +32,7 @@ dependencies = [
 dev = ["pytest>=8", "pytest-cov>=5"]
 
 [project.urls]
-Repository = "https://github.com/in-loop/opendbc-ag"
+Repository = "https://github.com/chris-youngblut-solutions/opendbc-ag"
 
 [tool.setuptools.packages.find]
 include = ["opendbc_ag*"]
