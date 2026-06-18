@@ -14,7 +14,7 @@ Three things are simultaneously true in ag equipment as of 2026:
 2. **OEM proprietary use of CAN** sits on top of those public standards. Equipment manufacturers use the proprietary PGN ranges (`0xEF00` peer-to-peer and `0xFF00..0xFFFF` proprietary B) for vendor-defined signals — diagnostic codes, telemetry, parameter settings, software-version handshakes. The exact contents are vendor business secrets and are generally not documented publicly.
 3. **A repair-rights legal movement is in progress** — at the federal level (FTC actions, FARM Act bills), state level (Iowa HF 2763 and analogues), and international (EU Right to Repair Directive). These efforts vary widely in scope and enforcement; the legal status of independent CAN-bus reverse-engineering on owned equipment is jurisdiction-dependent and still evolving.
 
-opendbc-ag documents **standard PGNs from public sources only.** This scope is unambiguous across every plausible legal regime, regardless of how the repair-rights debate resolves.
+opendbc-ag documents **standard PGNs from public sources only.**
 
 ---
 
@@ -60,8 +60,6 @@ The project's content policy:
 - **Out of scope (CI-enforced):** PGNs in the proprietary ranges `0xEF00` (peer-to-peer) and `0xFF00..0xFFFF` (proprietary B).
 - **Out of scope (policy):** transcribed paywalled-spec text, reverse-engineered OEM proprietary frame definitions, material whose primary purpose is circumvention.
 
-This policy is a scope-management decision. A focused scope is simpler to maintain, lowers contributor coordination overhead, supports use as a downstream dependency, and stays stable across regulatory change.
-
 ---
 
 ## Disclaimer of legal advice
@@ -76,3 +74,4 @@ The content above is summary information for orientation. It is not legal advice
 |---|---|
 | 2026-05-13 | Initial draft (v0.1.0-private). |
 | 2026-06-16 | Neutralized register (justification → reference); legal facts and disclaimers unchanged. |
+| 2026-06-18 | Removed residual defensive/justification lines (scope unambiguity claim, policy-rationale paragraph); legal facts and disclaimers unchanged. |

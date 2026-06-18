@@ -1,12 +1,14 @@
 # FAQ
 
+Common questions about opendbc-ag — scope, licensing, contributions, tooling, and reporting.
+
 ## What is opendbc-ag?
 
 A repository of DBC files describing agricultural CAN bus traffic — primarily ISOBUS (ISO 11783) and the ag-relevant subset of SAE J1939 — sourced from publicly-available documentation and open-source projects. The DBCs are usable directly with [cantools](https://github.com/cantools/cantools), [canmatrix](https://github.com/ebroecker/canmatrix), [SavvyCAN](https://github.com/collin80/SavvyCAN), and the openpilot tools ecosystem.
 
 ## Why does this project exist?
 
-There is no widely-shared canonical DBC corpus for ag-CAN content the way [opendbc](https://github.com/commaai/opendbc) is for automotive. Individual researchers, fleet integrators, AgOpenGPS contributors, and academic projects (ISOBlue at Purdue) each maintain partial sets. This project is an attempt at a shared, MIT-licensed, open baseline that anyone can build on. See `docs/legal-context.md` for the scope-policy rationale.
+There is no widely-shared canonical DBC corpus for ag-CAN content the way [opendbc](https://github.com/commaai/opendbc) is for automotive. Individual researchers, fleet integrators, AgOpenGPS contributors, and academic projects (ISOBlue at Purdue) each maintain partial sets. opendbc-ag provides a shared, MIT-licensed, open baseline. See `docs/legal-context.md` for the scope-policy rationale.
 
 ## Is this affiliated with comma.ai, opendbc, AgIsoStack, AgOpenGPS, or any OEM?
 
@@ -18,7 +20,7 @@ To match opendbc (the automotive project) and AgIsoStack++ (the primary upstream
 
 ## Can I add my OEM's proprietary signals?
 
-Not to this repository. opendbc-ag's scope is **pure-standard PGNs only** — anything in the `0xEF00` or `0xFF00..0xFFFF` ranges is rejected by CI. Proprietary signal definitions are interesting and valuable, but they belong in a project whose scope welcomes them. See `docs/legal-context.md` and `docs/code-of-conduct.md` §8 for the reasoning.
+Not to this repository. opendbc-ag's scope is **pure-standard PGNs only** — anything in the `0xEF00` or `0xFF00..0xFFFF` ranges is rejected by CI. Proprietary signal definitions belong in a project whose scope includes them. See `docs/legal-context.md` and `docs/code-of-conduct.md` §8 for the reasoning.
 
 ## Can I add a PGN I sniffed from my own equipment?
 

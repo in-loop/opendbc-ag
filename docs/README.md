@@ -1,6 +1,8 @@
 # `docs/`
 
-Project documentation.
+Index of the project documentation in this directory.
+
+## The docs
 
 - `coverage.md` — auto-generated PGN coverage matrix (Phase 11)
 - `signal-naming-guide.md` — naming conventions for DBC signals

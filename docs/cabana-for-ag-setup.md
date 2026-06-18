@@ -1,8 +1,8 @@
 # cabana-for-ag setup
 
-A practical guide for sniffing ag-CAN, discovering signals, and producing DBC contributions for this repository.
+Workflow for sniffing ag-CAN, discovering signals, and producing DBC contributions for this repository.
 
-This doc walks the **generic** end-to-end workflow first (applies to any ag-CAN bus), then lists the **fleet-specific** pinouts and tap points the maintainer is still working through. Fleet-specific sections are explicitly flagged `<TODO>` until first-hand capture has been done — they are intentionally not guessed.
+The **generic** end-to-end workflow comes first (applies to any ag-CAN bus), followed by the **fleet-specific** pinouts and tap points. Fleet-specific sections are flagged `<TODO>` until first-hand capture has been done.
 
 ---
 
@@ -41,7 +41,7 @@ cd openpilot/tools/cabana
 # follow the cabana README — current openpilot uses scons; depends on capnproto
 ```
 
-### 1c. command-line baseline (always works)
+### 1c. command-line baseline
 
 `can-utils` from the linux-can project. Works on any SocketCAN interface.
 
@@ -130,7 +130,7 @@ Or in SavvyCAN: `Connection → Add New Connection → SocketCAN (can0)`, set bi
 
 ### 4c. What to capture
 
-Run-of-the-day captures are more useful than synthetic test loops. Plan a captures around a known stimulus:
+Plan captures around a known stimulus:
 
 | Goal | Stimulus | Expected signal class |
 |---|---|---|
